@@ -1,0 +1,41 @@
+[
+    {
+        "id": 0,
+        "day": "Hétfő",
+        "recipes": [
+            "Palacsinta",
+            "Rántotta"
+        ]
+        
+    },
+    {
+        "id": 1,
+        "day": "Kedd",
+        "recipes": []
+    },
+    {
+        "id": 2,
+        "day": "Szerda",
+        "recipes": []
+    },
+    {
+        "id": 3,
+        "day": "Csütörtök",
+        "recipes": []
+    },
+    {
+        "id": 4,
+        "day": "Péntek",
+        "recipes": []
+    },
+    {
+        "id": 5,
+        "day": "Szombat",
+        "recipes": []
+    },
+    {
+        "id": 6,
+        "day": "Vasárnap",
+        "recipes": []
+    }
+]

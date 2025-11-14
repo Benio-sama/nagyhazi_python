@@ -1,0 +1,56 @@
+[
+    {
+        "id": 0,
+        "name": "Palacsinta",
+        "category": "desszert",
+        "servings": 4,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "liszt",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "id": 1,
+                "name": "tojás",
+                "quantity": 2,
+                "unit": "db"
+            },
+            {
+                "id": 2,
+                "name": "tej",
+                "quantity": 300,
+                "unit": "ml"
+            }
+        ],
+        "instructions": "Keverd össze az alapanyagokat, majd sütsd ki."
+    },
+    {
+        "id": 1,
+        "name": "Rántotta",
+        "category": "főétel",
+        "servings": 4,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "tojás",
+                "quantity": 2,
+                "unit": "db"
+            },
+            {
+                "id": 1,
+                "name": "tej",
+                "quantity": 50,
+                "unit": "ml"
+            },
+            {
+                "id": 2,
+                "name": "sajt",
+                "quantity": 30,
+                "unit": "g"
+            }
+        ],
+        "instructions": "Keverd össze az alapanyagokat, majd sütsd ki."
+    }
+]

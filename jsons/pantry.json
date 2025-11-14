@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "name": "liszt",
+        "quantity": 1000,
+        "unit": "g"
+    },
+    {
+        "id": 1,
+        "name": "tojás",
+        "quantity": 2,
+        "unit": "db"
+    },
+    {
+        "id": 2,
+        "name": "tej",
+        "quantity": 100,
+        "unit": "ml"
+    }
+]
