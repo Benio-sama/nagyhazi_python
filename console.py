@@ -1,3 +1,6 @@
+import os
+
+
 def main_menu():
     from recipe_console import recipe_main_menu
 
@@ -66,7 +69,12 @@ def shopping_list_menu():
     if choice == '0':
         main_menu()
 
-def main():
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def console_main():
+    clear_console()
+    print("consolemain")
     main_menu()
 
-main()
+# console_main()

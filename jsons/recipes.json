@@ -24,7 +24,9 @@
                 "unit": "ml"
             }
         ],
-        "instructions": "Keverd össze az alapanyagokat, majd sütsd ki."
+        "instructions": [
+            "Keverd össze az alapanyagokat, majd sütsd ki."
+        ]
     },
     {
         "id": 1,
@@ -51,6 +53,95 @@
                 "unit": "g"
             }
         ],
-        "instructions": "Keverd össze az alapanyagokat, majd sütsd ki."
+        "instructions": [
+            "Verd fel a tojásokat a tejjel, majd süsd meg serpenyőben. Tálalás előtt szórd meg reszelt sajttal."
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Lasagne",
+        "category": "főétel",
+        "servings": 4,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "só",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 1,
+                "name": "darált hús",
+                "quantity": 1,
+                "unit": "kg"
+            },
+            {
+                "id": 2,
+                "name": "paradicsomszósz",
+                "quantity": 1,
+                "unit": "l"
+            },
+            {
+                "id": 3,
+                "name": "lasagne tészta",
+                "quantity": 50,
+                "unit": "dkg"
+            },
+            {
+                "id": 4,
+                "name": "sajt",
+                "quantity": 10,
+                "unit": "dkg"
+            },
+            {
+                "id": 5,
+                "name": "tej",
+                "quantity": 1,
+                "unit": "l"
+            },
+            {
+                "id": 6,
+                "name": "liszt",
+                "quantity": 10,
+                "unit": "dkg"
+            },
+            {
+                "id": 7,
+                "name": "vaj",
+                "quantity": 10,
+                "unit": "dkg"
+            },
+            {
+                "id": 8,
+                "name": "vöröshagyma",
+                "quantity": 1,
+                "unit": "fej"
+            },
+            {
+                "id": 9,
+                "name": "fokhagyma",
+                "quantity": 2,
+                "unit": "gerezd"
+            },
+            {
+                "id": 10,
+                "name": "bors",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 11,
+                "name": "bazsalikom",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            }
+        ],
+        "instructions": [
+            "A lasagne receptjének elkészítéséhez kevés olajon megdinszteljük az apróra vágott vöröshagymát a fokhagymával együtt, majd rátesszük a darált húst, és nagyobb lángon egészen addig pároljuk, amíg a hús kifehéredik.",
+            "Sóval, borssal ízesítjük. Ezután pici vizet öntünk alá, és fedő alatt puhára pároljuk. Amikor már majdnem elkészült, felengedjük a paradicsomszósszal, bazsalikommal ízesítjük, és jól összefőzzük.",
+            "Közben a vajat serpenyőben felmelegítjük, beleszórjuk a lisztet, és addig hevítjük, míg el nem kezd kifehéredni. Felengedjük a langyos tejjel, sózzuk és nem túl sűrű besamel mártást főzünk belőle. Ha nagyon sűrű lenne, kevés tejjel hígíthatjuk.",
+            "Egy közepes méretű tepsit vékonyan kiolajazunk. Az aljába teszünk egy kevés ragut, több besamelt, majd jön rá a lasagne tésztalap. Ismét a ragu, a besamel, a tészta váltakozva. A lényeg, hogy a lasagne tetejére kerüljön az utolsó adag ragu.",
+            "Megszórjuk reszelt sajttal, alufóliával letakarva, 170 Celsius-fokra előmelegített sütőben, kb. 35-40 perc alatt készre sütjük (amíg a tészta megpuhul, a sajt szépen megbarnul)."
+        ]
     }
 ]

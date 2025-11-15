@@ -1,30 +1,39 @@
 import json
 
 class Ingredient:
-    def __init__(self, id, name: str, quantity: float, unit: str):
+    def __init__(self, id, name: str, quantity: float | None, unit: str):
         self.id = id
         self.name = name
-        self.quantity = quantity
+        if unit == 'ízlés szerint':
+            self.quantity = None
+        else:
+            self.quantity = quantity
         self.unit = unit
 
     def __str__(self):
+        if self.quantity is None:
+            return f"{self.name}: {self.unit}"
         return f"{self.name}: {self.quantity} {self.unit}"
 
     def _conversion(self, new_unit: str) -> float:
         conversions = {
             ('g', 'kg'): 0.001,
-            ('dkg', 'g'): 10,
             ('g', 'dkg'): 0.1,
+            ('dkg', 'g'): 10,
+            ('dkg', 'kg'): 0.01,
             ('kg', 'g'): 1000,
             ('kg', 'dkg'): 100,
-            ('dkg', 'kg'): 0.01,
             ('ml', 'l'): 0.001,
             ('ml', 'dl'): 0.1,
             ('dl', 'ml'): 10,
-            ('l', 'dl'): 10,
             ('dl', 'l'): 0.1,
+            ('l', 'dl'): 10,
             ('l', 'ml'): 1000,
             ('db', 'db'): 1,
+            ('fej', 'fej'): 1,
+            ('szem', 'szem'): 1,
+            ('gerezd', 'gerezd'): 1,
+            ('ízlés szerint', 'ízlés szerint'): 1,
             ('tk', 'ml'): 5,
             ('ek', 'ml'): 15,
             ('cup', 'ml'): 240,
@@ -50,7 +59,7 @@ class Ingredient:
         self.unit = new_unit
 
 class Recipe:
-    def __init__(self, id: int, name: str, category: str, servings: int, ingredients: list[Ingredient], instructions: str):
+    def __init__(self, id: int, name: str, category: str, servings: int, ingredients: list[Ingredient], instructions: list[str]):
         self.id = id
         self.name = name
         self.category = category
@@ -66,8 +75,8 @@ class Recipe:
         return (f"\nRecipe({self.id}): {self.name}\n"
                 f"Category: {self.category}\n"
                 f"Servings: {self.servings}\n"
-                f"Ingredients:\n{ingredients_str}\n"
-                f"Instructions:\n{self.instructions}\n")
+                f"Ingredients:\n\t{ingredients_str}\n"
+                f"Instructions:\n{'\n'.join(self.instructions)}\n")
     
     def _setname(self, new_name):
         self.name = new_name
@@ -75,10 +84,14 @@ class Recipe:
     def _setcategory(self, new_category):
         self.category = new_category
 
+    def _setinstructions(self, new_instructions):
+        self.instructions = new_instructions
+
     def scale_recipe(self, new_servings):
         factor = new_servings / self.servings
         for ingredient in self.ingredients:
-            ingredient.quantity *= factor
+            if ingredient.quantity is not None:
+                ingredient.quantity *= factor
         self.servings = new_servings
 
     def add_ingredient(self, ingredient: Ingredient):
@@ -97,6 +110,16 @@ class Recipe:
     def get_ingredients(self):
             return [ing.name for ing in self.ingredients]
     
+    def get_instructions(self):
+        return self.instructions
+    
+    def add_instruction(self, instruction: str):
+        self.instructions.append(instruction)
+
+    def remove_instruction(self, index: int):
+        if 0 <= index < len(self.instructions):
+            self.instructions.pop(index)
+    
 
 def read_recipe_from_file(file_path: str):
     recipe_list = []
@@ -111,9 +134,11 @@ def read_recipe_from_file(file_path: str):
 
         ingredients = []
         for ing in lines[i]['ingredients']:
-            ingredients.append(Ingredient(ing['name'], ing['quantity'], ing['unit']))
-
-        instructions = lines[i]['instructions']
+            ingredients.append(Ingredient(ing['id'], ing['name'], ing['quantity'], ing['unit']))
+        
+        instructions = []
+        for instr in lines[i]['instructions']:
+            instructions.append(instr)
         recipe = Recipe(id, name, category, servings, ingredients, instructions)
         recipe_list.append(recipe)
     return recipe_list

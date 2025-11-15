@@ -1,6 +1,6 @@
-import console
+from console import console_main
 
 def main():
-    console.main()
+    console_main()
 
-# main()
+main()
