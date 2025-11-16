@@ -1,5 +1,5 @@
 import os
-
+from functions import clear_console
 
 def main_menu():
     from recipe_console import recipe_main_menu
@@ -44,6 +44,14 @@ def pantry_menu():
     choice = input("Válassz egy opciót: ")
     if choice == '0':
         main_menu()
+    elif choice == '1':
+        print("Hozzávaló hozzáadása")
+    elif choice == '2':
+        print("Hozzávaló módosítása")
+    elif choice == '3':
+        print("Hozzávaló törlése")
+    elif choice == '4':
+        print("Kamra tartalmának listázása")
 
 def menu_menu():
     print("Menü kezelése")
@@ -56,6 +64,14 @@ def menu_menu():
     choice = input("Válassz egy opciót: ")
     if choice == '0':
         main_menu()
+    elif choice == '1':
+        print("Napi menü hozzáadása")
+    elif choice == '2':
+        print("Napi menü módosítása")
+    elif choice == '3':
+        print("Napi menü törlése")
+    elif choice == '4':
+        print("Napi menük listázása")
 
 def shopping_list_menu():
     print("Bevásárlólista kezelése")
@@ -68,13 +84,17 @@ def shopping_list_menu():
     choice = input("Válassz egy opciót: ")
     if choice == '0':
         main_menu()
-
-def clear_console():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    elif choice == '1':
+        print("Bevásárlólista generálása")
+    elif choice == '2':
+        print("Bevásárlólista megtekintése")
+    elif choice == '3':
+        print("Bevásárlólista optimalizálása")
+    elif choice == '4':
+        print("Bevásárlólista törlése")
 
 def console_main():
     clear_console()
-    print("consolemain")
     main_menu()
 
 # console_main()

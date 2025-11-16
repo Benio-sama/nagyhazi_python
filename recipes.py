@@ -72,11 +72,11 @@ class Recipe:
     
     def _allinfo(self):
         ingredients_str = "\n\t".join([str(ing) for ing in self.ingredients])
-        return (f"\nRecipe({self.id}): {self.name}\n"
-                f"Category: {self.category}\n"
-                f"Servings: {self.servings}\n"
-                f"Ingredients:\n\t{ingredients_str}\n"
-                f"Instructions:\n{'\n'.join(self.instructions)}\n")
+        return (f"\nRecept({self.id}): {self.name}\n"
+                f"Kategória: {self.category}\n"
+                f"Adagok: {self.servings}\n"
+                f"Hozzávalók:\n\t{ingredients_str}\n"
+                f"Elkészítési utasítások:\n{'\n'.join(self.instructions)}\n")
     
     def _setname(self, new_name):
         self.name = new_name
