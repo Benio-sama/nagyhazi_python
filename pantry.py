@@ -18,6 +18,15 @@ class Pantry:
             print("Nincs elég mennyiség a kamrában.")
         else:
             self.quantity -= amount
+    
+    def _setname(self, new_name: str):
+        self.name = new_name
+
+    def _setquantity(self, new_quantity: float):
+        self.quantity = new_quantity
+
+    def _setunit(self, new_unit: str):
+        self.unit = new_unit
 
 def read_pantry_from_file(file_path: str):
     pantry_list = []
@@ -33,5 +42,3 @@ def read_pantry_from_file(file_path: str):
         pantry_list.append(pantry_item)
 
     return pantry_list
-
-# print(*read_pantry_from_file('jsons/pantry.json'))

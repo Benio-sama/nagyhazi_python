@@ -1,9 +1,11 @@
-import os
 from functions import clear_console
 
-def main_menu():
+def main_menu(recipes, menus, pantry):
     from recipe_console import recipe_main_menu
+    from menu_console import menu_main
+    from pantry_console import pantry_main_menu
 
+    clear_console()
     print("Főmenü")
     print("1. Receptek kezelése")
     print("2. Kamra kezelése")
@@ -16,11 +18,12 @@ def main_menu():
     choice = input("Válassz egy opciót: ")
     while choice != '0':
         if choice == '1':
-            recipe_main_menu()
+            recipe_main_menu(recipes, menus, pantry)
         elif choice == '2':
-            pantry_menu()
+            pantry_main_menu(recipes, menus, pantry)
         elif choice == '3':
-            menu_menu()
+            clear_console()
+            menu_main(recipes, menus, pantry)
         elif choice == '4':
             shopping_list_menu()
         elif choice == '5':
@@ -28,50 +31,10 @@ def main_menu():
         elif choice == '6':
             print("Adatok exportálása")
         else:
-            print("Érvénytelen választás. Próbáld újra.")
-            main_menu()
+            main_menu(recipes, menus, pantry)
             choice = input("Válassz egy opciót: ")
     exit()
 
-def pantry_menu():
-    print("Kamra kezelése")
-    print("1. Hozzávaló hozzáadása")
-    print("2. Hozzávaló módosítása")
-    print("3. Hozzávaló törlése")
-    print("4. Kamra tartalmának listázása")
-    print("0. Vissza a főmenübe")
-
-    choice = input("Válassz egy opciót: ")
-    if choice == '0':
-        main_menu()
-    elif choice == '1':
-        print("Hozzávaló hozzáadása")
-    elif choice == '2':
-        print("Hozzávaló módosítása")
-    elif choice == '3':
-        print("Hozzávaló törlése")
-    elif choice == '4':
-        print("Kamra tartalmának listázása")
-
-def menu_menu():
-    print("Menü kezelése")
-    print("1. Napi menü hozzáadása")
-    print("2. Napi menü módosítása")
-    print("3. Napi menü törlése")
-    print("4. Napi menük listázása")
-    print("0. Vissza a főmenübe")
-
-    choice = input("Válassz egy opciót: ")
-    if choice == '0':
-        main_menu()
-    elif choice == '1':
-        print("Napi menü hozzáadása")
-    elif choice == '2':
-        print("Napi menü módosítása")
-    elif choice == '3':
-        print("Napi menü törlése")
-    elif choice == '4':
-        print("Napi menük listázása")
 
 def shopping_list_menu():
     print("Bevásárlólista kezelése")
@@ -82,19 +45,17 @@ def shopping_list_menu():
     print("0. Vissza a főmenübe")
 
     choice = input("Válassz egy opciót: ")
-    if choice == '0':
-        main_menu()
-    elif choice == '1':
-        print("Bevásárlólista generálása")
-    elif choice == '2':
-        print("Bevásárlólista megtekintése")
-    elif choice == '3':
-        print("Bevásárlólista optimalizálása")
-    elif choice == '4':
-        print("Bevásárlólista törlése")
+    # if choice == '0':
+    #     # main_menu()
+    # elif choice == '1':
+    #     print("Bevásárlólista generálása")
+    # elif choice == '2':
+    #     print("Bevásárlólista megtekintése")
+    # elif choice == '3':
+    #     print("Bevásárlólista optimalizálása")
+    # elif choice == '4':
+    #     print("Bevásárlólista törlése")
 
-def console_main():
+def console_main(recipes, menus, pantry):
     clear_console()
-    main_menu()
-
-# console_main()
+    main_menu(recipes, menus, pantry)

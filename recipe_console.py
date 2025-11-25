@@ -2,10 +2,11 @@ import time
 from recipes import Ingredient
 from recipes import Recipe
 from recipes import read_recipe_from_file
-from functions import clear_console, exit_if_0
+from functions import clear_console, exit_if_0, back_to_menu, modify_body, modify_header
 
-def recipe_menu(recipes):
+def recipe_menu(recipes, menus, pantry):
     from console import main_menu
+
     print("Receptek kezelése")
     print("1. Új recept hozzáadása")
     print("2. Recept módosítása")
@@ -15,25 +16,25 @@ def recipe_menu(recipes):
 
     choice = input("Válassz egy opciót: ")
     if choice == '0':
-        main_menu()
+        main_menu(recipes, menus, pantry)
     elif choice == '1':
-        recipes = add_recipe(recipes)
         clear_console()
-        recipe_menu(recipes)
+        recipes = add_recipe(recipes, menus, pantry)
+        back_to_menu(recipe_menu, recipes, menus, pantry)
     elif choice == '2':
-        modify_recipe_menu(recipes)
+        modify_recipe_menu(recipes, menus, pantry)
         clear_console()
-        recipe_menu(recipes)
+        recipe_menu(recipes, menus, pantry)
     elif choice == '3':
-        recipes = delete_recipe(recipes)
         clear_console()
-        recipe_menu(recipes)
+        recipes = delete_recipe(recipes)
+        back_to_menu(recipe_menu, recipes, menus, pantry)
     elif choice == '4':
+        clear_console()
         list_recipes(recipes)
-        recipe_menu(recipes)
+        recipe_menu(recipes, menus, pantry)
 
 def modify_menu():
-    # clear_console()
     print("1. Név módosítása")
     print("2. Kategória módosítása")
     print("3. Adag módosítása")
@@ -42,7 +43,6 @@ def modify_menu():
     print("0. Vissza a receptek kezelése menübe")
 
 def modify_instructions_menu():
-    # clear_console()
     print("Elkészítési utasítások módosítása")
     print("1. Utasítás hozzáadása")
     print("2. Utasítás törlése")
@@ -50,7 +50,6 @@ def modify_instructions_menu():
     print("0. Vissza a módosítási menübe")
 
 def modify_ingredients_menu():
-    # clear_console()
     print("Hozzávalók módosítása")
     print("1. Hozzávaló hozzáadása")
     print("2. Hozzávaló törlése")
@@ -64,63 +63,39 @@ def modify_ingredient_menu():
     print("3. Mértékegység módosítása")
     print("0. Vissza a hozzávalók módosítása menübe")
 
-def modify_header(name, category):
-    print(f"{name} módosítása")
-    print(f"Jelenlegi {name}:", category)
-    print("0. Mégse")
-
-def modify_ingredient_header(name, ingredient):
-    print(f"{name} módosítása")
-    print(f"Jelenlegi {name}:", ingredient)
-    print("0. Mégse")
-
-def back_to_menu(menu):
-    time.sleep(1)
-    menu()
-
-def modify_body(headerfunc, s, value, setter, menufunc):
-    headerfunc(s, value)
-    new_value = input(f"Új {s.lower()}: ")
-    if new_value:
-        setter(int(new_value) if s == "Adag" else new_value)
-        print("Sikeres módosítás.")
-        back_to_menu(menufunc)
-    else:
-        menufunc()
-
-def add_recipe(recipes):
+def add_recipe(recipes, menus, pantry):
     print("Új recept hozzáadása")
     print("0. Mégse")
     name = input("Recept neve: ")
-    exit_if_0(name, recipe_menu, recipes)
+    exit_if_0(name, recipe_menu, recipes, menus, pantry)
     category = input("Kategória: ")
-    exit_if_0(category, recipe_menu, recipes)
+    exit_if_0(category, recipe_menu, recipes, menus, pantry)
     servings = int(input("Adagok száma: "))
-    exit_if_0(servings, recipe_menu, recipes)
+    exit_if_0(servings, recipe_menu, recipes, menus, pantry)
     ingredients = []
     ing_name = input("Hozzávaló neve (vagy 'kész' a befejezéshez): ")
-    exit_if_0(ing_name, recipe_menu, recipes)
+    exit_if_0(ing_name, recipe_menu, recipes, menus, pantry)
     while ing_name != 'kesz':
         quantity_input = input("Mennyiség (ha ízlés szerint, hagyd üresen): ")
         quantity = float(quantity_input) if quantity_input else None
-        exit_if_0(quantity, recipe_menu, recipes)
+        exit_if_0(quantity, recipe_menu, recipes, menus, pantry)
         unit = input("Mértékegység: ")
-        exit_if_0(unit, recipe_menu, recipes)
+        exit_if_0(unit, recipe_menu, recipes, menus, pantry)
         ingredients.append(Ingredient(len(ingredients), ing_name, quantity, unit))
         ing_name = input("Hozzávaló neve (vagy 'kész' a befejezéshez): ")
-        exit_if_0(ing_name, recipe_menu, recipes)
+        exit_if_0(ing_name, recipe_menu, recipes, menus, pantry)
     instructions = []
     instr = input("Elkészítési utasítás (vagy 'kész' a befejezéshez): ")
-    exit_if_0(instructions, recipe_menu, recipes)
+    exit_if_0(instructions, recipe_menu, recipes, menus, pantry)
     while instr != 'kesz':
         instructions.append(instr)
         instr = input("Elkészítési utasítás (vagy 'kész' a befejezéshez): ")
-        exit_if_0(instructions, recipe_menu, recipes)
+        exit_if_0(instructions, recipe_menu, recipes, menus, pantry)
     recipes.append(Recipe(len(recipes), name, category, servings, ingredients, instructions))
     print(f"{name} hozzáadva.")
     return recipes
 
-def modify_ingredient(recipe, recipes):
+def modify_ingredient(recipe, recipes, menus, pantry):
     print("Jelenlegi hozzávalók:")
     for ing in recipe.ingredients:
         print(f"{ing.id+1}, {ing}")
@@ -133,18 +108,17 @@ def modify_ingredient(recipe, recipes):
                     case '0':
                         modify_ingredients_menu()
                     case '1':
-                        modify_body(modify_ingredient_header, "Név", ing.name, ing._setname, modify_ingredient_menu)
+                        modify_body(modify_header, "Név", ing.name, ing._setname, modify_ingredient_menu)
                     case '2':
-                        modify_body(modify_ingredient_header, "Mennyiség", ing.quantity, ing._setquantity, modify_ingredient_menu)
+                        modify_body(modify_header, "Mennyiség", ing.quantity, ing._setquantity, modify_ingredient_menu)
                     case '3':
-                        modify_body(modify_ingredient_header, "Mértékegység", ing.unit, ing._setunit, modify_ingredient_menu)
+                        modify_body(modify_header, "Mértékegység", ing.unit, ing._setunit, modify_ingredient_menu)
             else:
                 print("Hozzávaló nem található.")
-        modify_recipe_menu(recipes)
+        back_to_menu(modify_recipe_menu, recipes, menus, pantry)
 
 
-def modify_recipe_menu(recipes):
-    from console import main_menu
+def modify_recipe_menu(recipes, menus, pantry):
     print("Recept módosítása")
     for r in recipes:
         print(f"{r.id+1}, {r.name}")
@@ -156,7 +130,7 @@ def modify_recipe_menu(recipes):
             choice = input("Válassz egy opciót: ")
             match choice:
                 case '0':
-                    main_menu()
+                    recipe_menu(recipes, menus, pantry)
                 case '1':
                     modify_body(modify_header, "Név", recipe.name, recipe._setname, modify_menu)
                 case '2':
@@ -168,7 +142,7 @@ def modify_recipe_menu(recipes):
                     ing_choice = input("Válassz egy opciót: ")
                     match ing_choice:
                         case '0':
-                            modify_recipe_menu(recipes)
+                            modify_recipe_menu(recipes, menus, pantry)
                         case '1':
                             ing_name = input("Hozzávaló neve: ")
                             quantity = float(input("Mennyiség: "))
@@ -176,7 +150,7 @@ def modify_recipe_menu(recipes):
                             ingredient = Ingredient(len(recipe.ingredients), ing_name, quantity, unit)
                             recipe.add_ingredient(ingredient)
                             print("Hozzávaló hozzáadva.")
-                            modify_recipe_menu(recipes)
+                            back_to_menu(modify_recipe_menu, recipes, menus, pantry)
                         case '2':
                             print("Jelenlegi hozzávalók:")
                             for ing in recipe.ingredients:
@@ -188,9 +162,9 @@ def modify_recipe_menu(recipes):
                                 print("Hozzávaló törölve.")
                             else:
                                 print("Törlés megszakítva.")
-                            modify_recipe_menu(recipes)
+                            back_to_menu(modify_recipe_menu, recipes, menus, pantry)
                         case '3':
-                            modify_ingredient(recipe, recipes)
+                            modify_ingredient(recipe, recipes, menus, pantry)
                 case '5':
                     modify_instructions_menu()
                     instr_choice = input("Válassz egy opciót: ")
@@ -201,7 +175,7 @@ def modify_recipe_menu(recipes):
                             instruction = input("Új utasítás: ")
                             recipe.add_instruction(instruction)
                             print("Utasítás hozzáadva.")
-                            modify_instructions_menu()
+                            back_to_menu(modify_instructions_menu)
                         case '2':
                             print("Jelenlegi utasítások:")
                             for i, instr in enumerate(recipe.instructions):
@@ -213,16 +187,17 @@ def modify_recipe_menu(recipes):
                                 print("Utasítás törölve.")
                             else:
                                 print("Törlés megszakítva.")
-                            modify_instructions_menu()
+                            back_to_menu(modify_instructions_menu)
                         case '3':
                             print("Jelenlegi utasítások:")
                             for i, instr in enumerate(recipe.instructions):
-                                print(f"{i+1}, {instr}")
+                                print(f"{i+1}. {instr}")
                             index = int(input("Szerkesztendő utasítás sorszáma: ")) - 1
                             new_instruction = input("Új utasítás szövege: ")
                             recipe.instructions[index] = new_instruction
                             print("Utasítás módosítva.")
-                            modify_instructions_menu()
+                            back_to_menu(modify_instructions_menu)
+                            
 
 def delete_recipe(recipes):
     print("Recept törlése")
@@ -234,7 +209,7 @@ def delete_recipe(recipes):
             confirm = input(f"Biztosan törölni akarod a '{recipe.name}' receptet? (i/n): ")
             if confirm.lower() == 'i':
                 recipes.remove(recipe)
-                print(f"Recept '{recipe.name}' törölve.")
+                print(f"{recipe.name} törölve.")
                 return recipes
             else:
                 print("Törlés megszakítva.")
@@ -243,15 +218,10 @@ def delete_recipe(recipes):
     return recipes
 
 def list_recipes(recipes):
-    clear_console()
     print("Receptek listázása")
     for recipe in recipes:
         print(recipe._allinfo())
 
-def recipe_main_menu():
-    recipes = read_recipe_from_file('jsons/recipes.json')
+def recipe_main_menu(recipes, menus, pantry):
     clear_console()
-    recipe_menu(recipes)
-
-
-# recipe_main_menu()
+    recipe_menu(recipes, menus, pantry)

@@ -43,7 +43,3 @@ def read_menu_from_file(file_path: str):
         menu_list.append(menu_item)  
 
     return menu_list
-
-menu_list = read_menu_from_file('jsons/menu.json')
-
-print(*menu_list, sep="\n")

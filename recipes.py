@@ -14,40 +14,6 @@ class Ingredient:
         if self.quantity is None:
             return f"{self.name}: {self.unit}"
         return f"{self.name}: {self.quantity} {self.unit}"
-
-    def _conversion(self, new_unit: str) -> float:
-        conversions = {
-            ('g', 'kg'): 0.001,
-            ('g', 'dkg'): 0.1,
-            ('dkg', 'g'): 10,
-            ('dkg', 'kg'): 0.01,
-            ('kg', 'g'): 1000,
-            ('kg', 'dkg'): 100,
-            ('ml', 'l'): 0.001,
-            ('ml', 'dl'): 0.1,
-            ('dl', 'ml'): 10,
-            ('dl', 'l'): 0.1,
-            ('l', 'dl'): 10,
-            ('l', 'ml'): 1000,
-            ('db', 'db'): 1,
-            ('fej', 'fej'): 1,
-            ('szem', 'szem'): 1,
-            ('gerezd', 'gerezd'): 1,
-            ('ízlés szerint', 'ízlés szerint'): 1,
-            ('tk', 'ml'): 5,
-            ('ek', 'ml'): 15,
-            ('cup', 'ml'): 240,
-            ('ml', 'tk'): 0.2,
-            ('ml', 'ek'): 1/15,
-            ('ml', 'cup'): 1/240,
-            ('l', 'cup'): 4.167,
-            ('cup', 'l'): 0.24,
-        }
-        key = (self.unit, new_unit)
-        if key in conversions:
-            return self.quantity * conversions[key]
-        else:
-            raise ValueError(f"Átváltás {self.unit}-ból/ből {new_unit}-ba/be nem támogatott.")
         
     def _setname(self, new_name: str):
         self.name = new_name
