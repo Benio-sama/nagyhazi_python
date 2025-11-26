@@ -1,5 +1,7 @@
+import math
 import os
 import time
+import json
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -52,6 +54,7 @@ def conversion(item, new_unit: str) -> float:
             raise ValueError(f"Átváltás {item.unit}-ból/ből {new_unit}-ba/be nem támogatott.")
         
 def modify_body(headerfunc, s, value, setter, menufunc, *args):
+    clear_console()
     headerfunc(s, value)
     new_value = input(f"Új {s.lower()}: ")
     if new_value:
@@ -65,3 +68,19 @@ def modify_header(name, value):
     print(f"{name} módosítása")
     print(f"Jelenlegi {name}:", value)
     print("0. Mégse")
+
+
+def save_to_json(list, filename):
+    data = [item.to_dict() for item in list]
+    with open(f"jsons/{filename}", "wt", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+
+def special_round(x, ):
+    whole = math.floor(x)
+    decimal = x - whole
+    if decimal < 0.5:
+        return whole + 0.5
+    elif decimal > 0.5:
+        return math.ceil(x) 
+    else:
+        return x

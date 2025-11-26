@@ -1,4 +1,7 @@
 import json
+import math
+
+from functions import is_less_point_five
 
 class Ingredient:
     def __init__(self, id, name: str, quantity: float | None, unit: str):
@@ -24,8 +27,16 @@ class Ingredient:
     def _setunit(self, new_unit: str):
         self.unit = new_unit
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'quantity': self.quantity,
+            'unit': self.unit
+        }
+
 class Recipe:
-    def __init__(self, id: int, name: str, category: str, servings: int, ingredients: list[Ingredient], instructions: list[str]):
+    def __init__(self, id: int, name: str, category: str, servings: int | float, ingredients: list[Ingredient], instructions: list[str]):
         self.id = id
         self.name = name
         self.category = category
@@ -55,10 +66,16 @@ class Recipe:
 
     def scale_recipe(self, new_servings):
         factor = new_servings / self.servings
-        for ingredient in self.ingredients:
-            if ingredient.quantity is not None:
-                ingredient.quantity *= factor
-        self.servings = new_servings
+        if new_servings != self.servings:
+            for ingredient in self.ingredients:
+                if ingredient.quantity is not None and ingredient.unit != 'db' and ingredient.unit != 'fej' and ingredient.unit != 'szem' and ingredient.unit != 'gerezd':
+                    if self.servings < new_servings:
+                        ingredient.quantity = math.floor(float(ingredient.quantity) * factor) if is_less_point_five(float(ingredient.quantity) * factor) else math.ceil(float(ingredient.quantity) * factor)
+                    else:
+                        ingredient.quantity = math.ceil(float(ingredient.quantity) * factor)
+                elif ingredient.unit == 'db' or ingredient.unit == 'fej' or ingredient.unit == 'szem' or ingredient.unit == 'gerezd':
+                    ingredient.quantity = math.ceil(float(ingredient.quantity) * factor)
+            self.servings = new_servings
 
     def add_ingredient(self, ingredient: Ingredient):
         self.ingredients.append(ingredient)
@@ -85,6 +102,16 @@ class Recipe:
     def remove_instruction(self, index: int):
         if 0 <= index < len(self.instructions):
             self.instructions.pop(index)
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'category': self.category,
+            'servings': self.servings,
+            'ingredients': [ing.to_dict() for ing in self.ingredients],
+            'instructions': self.instructions
+        }
     
 
 def read_recipe_from_file(file_path: str):

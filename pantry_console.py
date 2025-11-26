@@ -3,6 +3,7 @@ from pantry import Pantry
 
 def pantry_menu(recipes, menus, pantry):
     from console import main_menu
+
     print("Kamra kezelése")
     print("1. Hozzávaló hozzáadása")
     print("2. Hozzávaló módosítása")
@@ -21,6 +22,7 @@ def pantry_menu(recipes, menus, pantry):
         clear_console()
         modify_ingredient(recipes, menus, pantry)
     elif choice == '3':
+        clear_console()
         pantry = delete_ingredient(recipes, menus, pantry)
         back_to_menu(pantry_menu, recipes, menus, pantry)
     elif choice == '4':
@@ -47,19 +49,47 @@ def modify_ingredient(recipes, menus, pantry):
         print(i.id+1, f"{i.name} : {i.quantity} {i.unit}")
     ing_id = int(input("Add meg a módosítandó hozzávaló számát: "))
     exit_if_0(ing_id, pantry_menu, recipes, menus, pantry)
-    for i in pantry:
-        if i.id == ing_id-1:
-            print("1. Név módosítása")
-            print("2. Mennyiség módosítása")
-            print("3. Mértékegység módosítása")
-            choice = input("Mit szeretnél módosítani? ")
-            if choice == '1':
-                modify_body(modify_header, "Név", i.name, i._setname, pantry_menu, recipes, menus, pantry)
-            elif choice == '2':
-                modify_body(modify_header, "Mennyiség", i.quantity, i._setquantity, pantry_menu, recipes, menus, pantry)
-            elif choice == '3':
-                modify_body(modify_header, "Mértékegység", i.unit, i._setunit, pantry_menu, recipes, menus, pantry)
-    print("Hozzávaló nem található.")
+    print("1. Hozzávaló adatainak módosítása")
+    print("2. Mennyiség növelése")
+    print("3. Mennyiség csökkentése")
+    print("0. Mégse")
+    choice = input("Válassz egy opciót: ")
+    match choice:
+        case '0':
+            back_to_menu(pantry_menu, recipes, menus, pantry)
+        case '1':
+            for i in pantry:
+                if i.id == ing_id-1:
+                    print("1. Név módosítása")
+                    print("2. Mennyiség módosítása")
+                    print("3. Mértékegység módosítása")
+                    mod_choice = input("Válassz egy opciót: ")
+                    match mod_choice:
+                        case    '1':
+                            modify_body(modify_header, "Név", i.name, i._setname, pantry_menu, recipes, menus, pantry)
+                        case '2':
+                            modify_body(modify_header, "Mennyiség", i.quantity, i._setquantity, pantry_menu, recipes, menus, pantry)
+                        case '3':
+                            modify_body(modify_header, "Mértékegység", i.unit, i._setunit, pantry_menu, recipes, menus, pantry)
+            print("Hozzávaló nem található.")
+            back_to_menu(modify_ingredient, recipes, menus, pantry)
+        case '2':
+            for i in pantry:
+                if i.id == ing_id-1:
+                    i.add_quantity(float(input(f"Add meg a növelendő mennyiséget (jelenleg: {i.quantity}): ")))
+                    print("Mennyiség növelve.")
+                    back_to_menu(pantry_menu, recipes, menus, pantry)
+            print("Hozzávaló nem található.")
+            back_to_menu(modify_ingredient, recipes, menus, pantry)
+        case '3':
+            for i in pantry:
+                if i.id == ing_id-1:
+                    i.remove_quantity(float(input(f"Add meg a csökkentendő mennyiséget (jelenleg: {i.quantity}): ")))
+                    print("Mennyiség csökkentve.")
+                    back_to_menu(pantry_menu, recipes, menus, pantry)
+            print("Hozzávaló nem található.")
+            back_to_menu(modify_ingredient, recipes, menus, pantry)
+    
 
 def delete_ingredient(pantry):
     print("Hozzávaló törlése")
@@ -68,7 +98,7 @@ def delete_ingredient(pantry):
     ing_id = int(input("Add meg a törlendő hozzávaló számát: "))-1
     for i in pantry:
         if i.id == ing_id:
-            confirm = input(f"Biztosan törölni szeretnéd a(z) {pantry[ing_id].name} hozzávalót? (i/n): ")
+            confirm = input(f"Biztosan törölni szeretnéd a(z) {i.name} hozzávalót? (i/n): ")
             if confirm.lower() == 'i':
                 pantry.remove(i)
                 print("Hozzávaló törölve.")

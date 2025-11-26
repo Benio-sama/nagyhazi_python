@@ -28,6 +28,14 @@ class Pantry:
     def _setunit(self, new_unit: str):
         self.unit = new_unit
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'quantity': self.quantity,
+            'unit': self.unit
+        }
+
 def read_pantry_from_file(file_path: str):
     pantry_list = []
     with open(file_path, 'r', encoding='utf-8') as file:

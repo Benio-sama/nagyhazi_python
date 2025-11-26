@@ -143,5 +143,85 @@
             "Egy közepes méretű tepsit vékonyan kiolajazunk. Az aljába teszünk egy kevés ragut, több besamelt, majd jön rá a lasagne tésztalap. Ismét a ragu, a besamel, a tészta váltakozva. A lényeg, hogy a lasagne tetejére kerüljön az utolsó adag ragu.",
             "Megszórjuk reszelt sajttal, alufóliával letakarva, 170 Celsius-fokra előmelegített sütőben, kb. 35-40 perc alatt készre sütjük (amíg a tészta megpuhul, a sajt szépen megbarnul)."
         ]
+    },
+    {
+        "id": 3,
+        "name": "Krémes sertéskarajos tészta",
+        "category": "főétel",
+        "servings": 3,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "sertéskaraj",
+                "quantity": 501,
+                "unit": "g"
+            },
+            {
+                "id": 1,
+                "name": "spagetti",
+                "quantity": 251,
+                "unit": "g"
+            },
+            {
+                "id": 2,
+                "name": "vöröshagyma",
+                "quantity": 3,
+                "unit": "fej"
+            },
+            {
+                "id": 3,
+                "name": "fokhagyma",
+                "quantity": 3,
+                "unit": "gerezd"
+            },
+            {
+                "id": 4,
+                "name": "csemegekukorica",
+                "quantity": 101,
+                "unit": "g"
+            },
+            {
+                "id": 5,
+                "name": "főzőtejszín",
+                "quantity": 251,
+                "unit": "ml"
+            },
+            {
+                "id": 6,
+                "name": "vaj",
+                "quantity": 3,
+                "unit": "ek"
+            },
+            {
+                "id": 7,
+                "name": "só",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 8,
+                "name": "bors",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 9,
+                "name": "petrezselyemzöld",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 10,
+                "name": "reszelt sajt",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            }
+        ],
+        "instructions": [
+            "A tésztát enyhén sós vízben megfőzzük, majd leszűrjük. A karajt ízlés szerint sózzuk és borsozzuk.",
+            "Közben a felcsíkozott karajt a kevés olajon, megpirítjuk míg színt kap.",
+            "Hozzáadjuk a vöröshagymát, fokhagymát, pár- perc után hozzákeverjük a kukoricát majd felöntjük a tejszínnel kevés reszelt sajttal megszórjuk.",
+            "Ízlés szerint sózzuk és borsozzuk, alacsony lángon pár - perc alatt összeforraljuk. A leszűrt tésztát beleforgatjuk a krémes szószba. Tálaláskor, még megszórjuk reszelt sajttal és friss zöldfűszerekkel. "
+        ]
     }
 ]
