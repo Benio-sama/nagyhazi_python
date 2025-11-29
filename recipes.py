@@ -1,7 +1,7 @@
 import json
 import math
 
-from functions import is_less_point_five
+from functions import special_round
 
 class Ingredient:
     def __init__(self, id, name: str, quantity: float | None, unit: str):
@@ -70,11 +70,13 @@ class Recipe:
             for ingredient in self.ingredients:
                 if ingredient.quantity is not None and ingredient.unit != 'db' and ingredient.unit != 'fej' and ingredient.unit != 'szem' and ingredient.unit != 'gerezd':
                     if self.servings < new_servings:
-                        ingredient.quantity = math.floor(float(ingredient.quantity) * factor) if is_less_point_five(float(ingredient.quantity) * factor) else math.ceil(float(ingredient.quantity) * factor)
+                        ingredient.quantity = special_round(float(ingredient.quantity) * factor, False, False)
                     else:
-                        ingredient.quantity = math.ceil(float(ingredient.quantity) * factor)
-                elif ingredient.unit == 'db' or ingredient.unit == 'fej' or ingredient.unit == 'szem' or ingredient.unit == 'gerezd':
-                    ingredient.quantity = math.ceil(float(ingredient.quantity) * factor)
+                        ingredient.quantity = special_round(float(ingredient.quantity) * factor, False, True)
+                elif ingredient.unit == 'fej' or ingredient.unit == 'szál' or ingredient.unit == 'csokor' or ingredient.unit == 'szelet' or (ingredient.unit == 'db' and ingredient.name != 'tojás'):
+                    ingredient.quantity = special_round(float(ingredient.quantity) * factor, False, False)
+                elif ingredient.unit == 'db' or ingredient.unit == 'szem' or ingredient.unit == 'gerezd' or ingredient.unit == 'késhegynyi':
+                    ingredient.quantity = special_round(float(ingredient.quantity) * factor, True, False)
             self.servings = new_servings
 
     def add_ingredient(self, ingredient: Ingredient):
@@ -114,10 +116,13 @@ class Recipe:
         }
     
 
-def read_recipe_from_file(file_path: str):
+def read_recipe_from_file(file_path):
     recipe_list = []
-    with open(file_path, 'r', encoding='utf-8') as file:
-        lines = json.load(file)
+    if isinstance(file_path, str):
+        with open(file_path, 'r', encoding='utf-8') as file:
+            lines = json.load(file)
+    else:
+        lines = file_path
 
     for i in range(len(lines)):
         id = int(lines[i]['id'])
@@ -135,5 +140,3 @@ def read_recipe_from_file(file_path: str):
         recipe = Recipe(id, name, category, servings, ingredients, instructions)
         recipe_list.append(recipe)
     return recipe_list
-
-read_recipe_from_file('jsons/recipes.json')

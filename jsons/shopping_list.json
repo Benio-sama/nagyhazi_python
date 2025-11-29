@@ -1,0 +1,122 @@
+[
+    {
+        "id": 0,
+        "name": "sertéskaraj",
+        "quantity": 1000.0,
+        "unit": "g"
+    },
+    {
+        "id": 1,
+        "name": "spagetti",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 2,
+        "name": "vöröshagyma",
+        "quantity": 4.0,
+        "unit": "fej"
+    },
+    {
+        "id": 3,
+        "name": "fokhagyma",
+        "quantity": 8.0,
+        "unit": "gerezd"
+    },
+    {
+        "id": 4,
+        "name": "csemegekukorica",
+        "quantity": 200.0,
+        "unit": "g"
+    },
+    {
+        "id": 5,
+        "name": "főzőtejszín",
+        "quantity": 400.0,
+        "unit": "ml"
+    },
+    {
+        "id": 6,
+        "name": "vaj",
+        "quantity": 18.0,
+        "unit": "ek"
+    },
+    {
+        "id": 7,
+        "name": "só",
+        "quantity": null,
+        "unit": "ízlés szerint"
+    },
+    {
+        "id": 8,
+        "name": "bors",
+        "quantity": null,
+        "unit": "ízlés szerint"
+    },
+    {
+        "id": 9,
+        "name": "petrezselyemzöld",
+        "quantity": null,
+        "unit": "ízlés szerint"
+    },
+    {
+        "id": 10,
+        "name": "reszelt sajt",
+        "quantity": null,
+        "unit": "ízlés szerint"
+    },
+    {
+        "id": 11,
+        "name": "tojás",
+        "quantity": 10.0,
+        "unit": "db"
+    },
+    {
+        "id": 12,
+        "name": "tej",
+        "quantity": 2750.0,
+        "unit": "ml"
+    },
+    {
+        "id": 13,
+        "name": "sajt",
+        "quantity": 290.0,
+        "unit": "g"
+    },
+    {
+        "id": 15,
+        "name": "darált hús",
+        "quantity": 2.0,
+        "unit": "kg"
+    },
+    {
+        "id": 16,
+        "name": "paradicsomszósz",
+        "quantity": 2.0,
+        "unit": "l"
+    },
+    {
+        "id": 17,
+        "name": "lasagne tészta",
+        "quantity": 100.0,
+        "unit": "dkg"
+    },
+    {
+        "id": 20,
+        "name": "liszt",
+        "quantity": 600.0,
+        "unit": "g"
+    },
+    {
+        "id": 25,
+        "name": "bazsalikom",
+        "quantity": null,
+        "unit": "ízlés szerint"
+    },
+    {
+        "id": 19,
+        "name": "rizs",
+        "quantity": 1.0,
+        "unit": "kg"
+    }
+]

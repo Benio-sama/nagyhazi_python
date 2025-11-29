@@ -22,12 +22,21 @@ class Menu:
 
     def get_meals(self):
         return self.recipes
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'day': self.day,
+            'recipes': [rec.name for rec in self.recipes]
+        }
 
-def read_menu_from_file(file_path: str):
-    recipes = read_recipe_from_file('jsons/recipes.json')
+def read_menu_from_file(recipes, file_path):
     menu_list = []
-    with open(file_path, 'r', encoding='utf-8') as file:
-        lines = json.load(file)
+    if isinstance(file_path, str):
+        with open(file_path, 'r', encoding='utf-8') as file:
+            lines = json.load(file)
+    else:
+        lines = file_path
     
     for i in range(len(lines)):
         id = int(lines[i]['id'])

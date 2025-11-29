@@ -36,10 +36,13 @@ class Pantry:
             'unit': self.unit
         }
 
-def read_pantry_from_file(file_path: str):
+def read_pantry_from_file(file_path):
     pantry_list = []
-    with open(file_path, 'r', encoding='utf-8') as file:
-        lines = json.load(file)
+    if isinstance(file_path, str):
+        with open(file_path, 'r', encoding='utf-8') as file:
+            lines = json.load(file)
+    else:
+        lines = file_path
 
     for i in range(len(lines)):
         id = lines[i]['id']

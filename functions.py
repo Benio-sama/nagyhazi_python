@@ -19,39 +19,187 @@ def back_to_menu(menu, *args):
     clear_console()
     menu(*args)
 
-def conversion(item, new_unit: str) -> float:
-        conversions = {
-            ('g', 'kg'): 0.001,
-            ('g', 'dkg'): 0.1,
-            ('dkg', 'g'): 10,
-            ('dkg', 'kg'): 0.01,
-            ('kg', 'g'): 1000,
-            ('kg', 'dkg'): 100,
-            ('ml', 'l'): 0.001,
-            ('ml', 'dl'): 0.1,
-            ('dl', 'ml'): 10,
-            ('dl', 'l'): 0.1,
-            ('l', 'dl'): 10,
-            ('l', 'ml'): 1000,
-            ('db', 'db'): 1,
-            ('fej', 'fej'): 1,
-            ('szem', 'szem'): 1,
-            ('gerezd', 'gerezd'): 1,
-            ('ízlés szerint', 'ízlés szerint'): 1,
-            ('tk', 'ml'): 5,
-            ('ek', 'ml'): 15,
-            ('cup', 'ml'): 240,
-            ('ml', 'tk'): 0.2,
-            ('ml', 'ek'): 1/15,
-            ('ml', 'cup'): 1/240,
-            ('l', 'cup'): 4.167,
-            ('cup', 'l'): 0.24,
-        }
-        key = (item.unit, new_unit)
-        if key in conversions:
-            return item.quantity * conversions[key]
-        else:
-            raise ValueError(f"Átváltás {item.unit}-ból/ből {new_unit}-ba/be nem támogatott.")
+def conversion(item, new_unit: str):
+    conversions = {
+        ('g', 'kg'): 0.001,
+        ('g', 'dkg'): 0.1,
+        ('dkg', 'g'): 10,
+        ('dkg', 'kg'): 0.01,
+        ('kg', 'g'): 1000,
+        ('kg', 'dkg'): 100,
+        ('ml', 'l'): 0.001,
+        ('ml', 'dl'): 0.1,
+        ('dl', 'ml'): 10,
+        ('dl', 'l'): 0.1,
+        ('l', 'dl'): 10,
+        ('l', 'ml'): 1000,
+        ('db', 'db'): 1,
+        ('fej', 'fej'): 1,
+        ('szem', 'szem'): 1,
+        ('gerezd', 'gerezd'): 1,
+        ('ízlés szerint', 'ízlés szerint'): 1,
+        ('szál', 'szál'): 1,
+        ('csokor', 'csokor'): 1,
+        ('szelet', 'szelet'): 1,
+        ('késhegynyi', 'késhegynyi'): 1,
+        ('tk', 'ek'): 3,
+        ('ek', 'tk'): 1/3,
+        ('kk', 'ek'): 1/6,
+        ('ek', 'kk'): 6,
+        ('kk', 'tk'): 1/2,
+        ('tk', 'kk'): 2,
+        ('cup', 'ml'): 240,
+        ('ml', 'tk'): 0.2,
+        ('ml', 'ek'): 1/15,
+        ('ml', 'cup'): 1/240,
+        ('l', 'cup'): 4.167,
+        ('cup', 'l'): 0.24,
+    }
+
+    spoon_ml = {
+        'ek': 15,
+        'tk': 5,
+        'kk': 2.5,
+    }
+    
+    volume = {
+        'cukor': 0.85,
+        'kristálycukor': 0.85,
+        'porcukor': 0.56,
+        'barna cukor': 0.72,
+        'nádcukor': 0.80,
+        'vaníliás cukor': 0.60,
+        'finomliszt': 0.53,
+        'rétesliszt': 0.50,
+        'teljes kiőrlésű liszt': 0.60,
+        'rizsliszt': 0.55,
+        'kukoricaliszt': 0.58,
+        'burgonyaliszt': 0.70,
+        'mandulaliszt': 0.45,
+        'kókuszliszt': 0.40,
+        'búzadara': 0.60,
+        'kukoricakeményítő': 0.55,
+        'burgonyakeményítő': 0.80,
+        'olaj': 0.92,
+        'olívaolaj': 0.91,
+        'vaj': 0.96,
+        'margarin': 0.95,
+        'zsír': 0.92,
+        'kókuszolaj': 0.92,
+        'tej': 1.03,
+        'tejszín': 1.01,
+        'habtejszín': 1.01,
+        'joghurt': 1.04,
+        'kefir': 1.03,
+        'tejföl': 1.00,
+        'víz': 1.00,
+        'almaecet': 1.01,
+        'borecet': 1.01,
+        'méz': 1.40,
+        'juharszirup': 1.32,
+        'agávészirup': 1.33,
+        'darált dió': 0.45,
+        'darált mák': 0.60,
+        'darált mandula': 0.45,
+        'darált mogyoró': 0.50,
+        'kókuszreszelék': 0.37,
+        'rizs': 0.85,
+        'bulgur': 0.60,
+        'kuszkusz': 0.60,
+        'zabpehely': 0.40,
+        'kakaópor': 0.50,
+        'cukrozatlan kakaópor': 0.45,
+        'csokoládé reszelék': 0.55,
+        'só': 1.20,
+        'szódabikarbóna': 1.00,
+        'sütőpor': 0.90,
+        'zselatin por': 0.80,
+        'almapüré': 1.05,
+        'banánpüré': 1.10,
+        'kókuszkrém': 1.05,
+        'paradicsompüré': 1.06,
+        'paradicsomszósz': 1.02,
+        'csicseriborsó püré': 1.10,
+        'babpüré': 1.15,
+        'avokádó püré': 1.10,
+        'tökhús püré': 1.00,
+        'burgonyapüré': 0.85,
+        'eperpüré': 1.00,
+        'mangópüré': 1.12,
+        'szilvapüré': 1.05,
+        'körtépüré': 1.03,
+        'fahéj': 0.56,
+        'őrölt fahéj': 0.52,
+        'őrölt gyömbér': 0.55,
+        'őrölt szegfűszeg': 0.53,
+        'őrölt szerecsendió': 0.56,
+        'kurkuma': 0.54,
+        'őrölt kömény': 0.52,
+        'őrölt paprika': 0.54,
+        'füstölt paprika': 0.50,
+        'chili por': 0.45,
+        'cayenne': 0.45,
+        'fokhagymapor': 0.72,
+        'hagymapor': 0.56,
+        'vaníliapor': 0.45,
+        'kakaópor': 0.45,
+        'szárított oregánó': 0.20,
+        'szárított bazsalikom': 0.15,
+        'szárított petrezselyem': 0.10,
+        'szárított majoranna': 0.12,
+        'szárított kakukkfű': 0.18,
+        'szárított rozmaring': 0.20,
+        'majonéz': 0.95,
+        'mustár': 1.14,
+        'ketchup': 1.10,
+        'bbq_szósz': 1.20,
+        'tartármártás': 0.98,
+        'fokhagymás_szósz': 1.05,
+        'csípős_szósz': 1.00,   # átlag, típusfüggő
+        'majonézalapú_szósz': 0.95,
+        'joghurtos_szósz': 1.04,
+        'csiliszósz': 1.12,
+        'édes-savanyú_szósz': 1.15,
+        'szójaszósz': 1.20,
+        'teriyaki_szósz': 1.17,
+        'halmártás': 1.20,
+        'balzsamecet_krém': 1.33,  
+    }
+
+    if item.unit == new_unit:
+        return item.quantity
+    if item.unit in ('ek', 'tk') and new_unit in ('g', 'dkg', 'kg'):
+        if item.name not in volume:
+            print(f"Nincs sűrűségi adat ehhez a hozzávalóhoz: {item.name}")
+            return False
+        ml = item.quantity * spoon_ml[item.unit]
+        gramm = ml * volume[item.name]
+        if new_unit == 'g':
+            return gramm
+        if new_unit == 'dkg':
+            return gramm / 10
+        if new_unit == 'kg':
+            return gramm / 1000
+
+    if item.unit in ('g', 'dkg', 'kg') and new_unit in ('ek', 'tk'):
+        if item.name not in volume:
+            print(f"Nincs sűrűségi adat ehhez a hozzávalóhoz: {item.name}")
+            return False
+        gramm = item.quantity
+        if item.unit == 'dkg':
+            gramm *= 10
+        if item.unit == 'kg':
+            gramm *= 1000
+        ml = gramm / volume[item.name]
+        return ml / spoon_ml[new_unit]
+
+    key = (item.unit, new_unit)
+    if key in conversions:
+        return item.quantity * conversions[key]
+    else:
+        print(f"Nincs konverzió {item.unit} és {new_unit} között.")
+        return False
+
         
 def modify_body(headerfunc, s, value, setter, menufunc, *args):
     clear_console()
@@ -75,12 +223,50 @@ def save_to_json(list, filename):
     with open(f"jsons/{filename}", "wt", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
-def special_round(x, ):
+def special_round(x, spec, down):
     whole = math.floor(x)
     decimal = x - whole
-    if decimal < 0.5:
-        return whole + 0.5
-    elif decimal > 0.5:
-        return math.ceil(x) 
-    else:
+    if decimal == 0:
         return x
+    elif decimal > 0.5:
+        if spec == False:
+            return math.ceil(x) 
+        else:
+            return math.floor(x)
+    elif decimal < 0.5:
+        if spec == False:
+            return whole + 0.5 if down == False else math.floor(x)
+        else:
+            if whole == 0:
+                return whole + 0.5
+            return math.floor(x)
+    else:
+        if spec == False:
+            return x 
+        else:
+            return math.ceil(x)
+        
+def modify_quantity(item):
+    print(f"Jelenlegi mértékegység: {item.unit}")
+    new_unit = input(f"Add meg az új mértékegységet: ")
+    item.unit = new_unit
+    converted_quantity = conversion(item, new_unit)
+    if converted_quantity is not False:
+        item.quantity = special_round(converted_quantity, False, False)
+        print(f"Sikeres konvertálás!")
+    else:
+        print("A konverzió nem lehetséges a megadott mértékegységre.")
+
+def import_all(filename):
+    with open(f"jsons/{filename}", "rt", encoding="utf-8") as f:
+        try:
+            data = json.load(f)
+        except json.JSONDecodeError:
+            data = {}
+
+    return (
+        data.get("recipes", []),
+        data.get("menus", []),
+        data.get("pantry", []),
+        data.get("shopping_list", [])
+    )

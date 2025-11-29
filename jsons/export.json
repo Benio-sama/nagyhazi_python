@@ -1,0 +1,421 @@
+{
+    "recipes": [
+        {
+            "id": 0,
+            "name": "Palacsinta",
+            "category": "desszert",
+            "servings": 4,
+            "ingredients": [
+                {
+                    "id": 0,
+                    "name": "liszt",
+                    "quantity": 200.0,
+                    "unit": "g"
+                },
+                {
+                    "id": 1,
+                    "name": "tojás",
+                    "quantity": 2.0,
+                    "unit": "db"
+                },
+                {
+                    "id": 2,
+                    "name": "tej",
+                    "quantity": 300.0,
+                    "unit": "ml"
+                }
+            ],
+            "instructions": [
+                "Keverd össze az alapanyagokat, majd sütsd ki."
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Rántotta",
+            "category": "főétel",
+            "servings": 4,
+            "ingredients": [
+                {
+                    "id": 0,
+                    "name": "tojás",
+                    "quantity": 2,
+                    "unit": "db"
+                },
+                {
+                    "id": 1,
+                    "name": "tej",
+                    "quantity": 50,
+                    "unit": "ml"
+                },
+                {
+                    "id": 2,
+                    "name": "sajt",
+                    "quantity": 30,
+                    "unit": "g"
+                }
+            ],
+            "instructions": [
+                "Verd fel a tojásokat a tejjel, majd süsd meg serpenyőben. Tálalás előtt szórd meg reszelt sajttal."
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Lasagne",
+            "category": "főétel",
+            "servings": 4,
+            "ingredients": [
+                {
+                    "id": 0,
+                    "name": "só",
+                    "quantity": null,
+                    "unit": "ízlés szerint"
+                },
+                {
+                    "id": 1,
+                    "name": "darált hús",
+                    "quantity": 1,
+                    "unit": "kg"
+                },
+                {
+                    "id": 2,
+                    "name": "paradicsomszósz",
+                    "quantity": 1,
+                    "unit": "l"
+                },
+                {
+                    "id": 3,
+                    "name": "lasagne tészta",
+                    "quantity": 50,
+                    "unit": "dkg"
+                },
+                {
+                    "id": 4,
+                    "name": "sajt",
+                    "quantity": 10,
+                    "unit": "dkg"
+                },
+                {
+                    "id": 5,
+                    "name": "tej",
+                    "quantity": 1,
+                    "unit": "l"
+                },
+                {
+                    "id": 6,
+                    "name": "liszt",
+                    "quantity": 10,
+                    "unit": "dkg"
+                },
+                {
+                    "id": 7,
+                    "name": "vaj",
+                    "quantity": 10,
+                    "unit": "dkg"
+                },
+                {
+                    "id": 8,
+                    "name": "vöröshagyma",
+                    "quantity": 1,
+                    "unit": "fej"
+                },
+                {
+                    "id": 9,
+                    "name": "fokhagyma",
+                    "quantity": 2,
+                    "unit": "gerezd"
+                },
+                {
+                    "id": 10,
+                    "name": "bors",
+                    "quantity": null,
+                    "unit": "ízlés szerint"
+                },
+                {
+                    "id": 11,
+                    "name": "bazsalikom",
+                    "quantity": null,
+                    "unit": "ízlés szerint"
+                }
+            ],
+            "instructions": [
+                "A lasagne receptjének elkészítéséhez kevés olajon megdinszteljük az apróra vágott vöröshagymát a fokhagymával együtt, majd rátesszük a darált húst, és nagyobb lángon egészen addig pároljuk, amíg a hús kifehéredik.",
+                "Sóval, borssal ízesítjük. Ezután pici vizet öntünk alá, és fedő alatt puhára pároljuk. Amikor már majdnem elkészült, felengedjük a paradicsomszósszal, bazsalikommal ízesítjük, és jól összefőzzük.",
+                "Közben a vajat serpenyőben felmelegítjük, beleszórjuk a lisztet, és addig hevítjük, míg el nem kezd kifehéredni. Felengedjük a langyos tejjel, sózzuk és nem túl sűrű besamel mártást főzünk belőle. Ha nagyon sűrű lenne, kevés tejjel hígíthatjuk.",
+                "Egy közepes méretű tepsit vékonyan kiolajazunk. Az aljába teszünk egy kevés ragut, több besamelt, majd jön rá a lasagne tésztalap. Ismét a ragu, a besamel, a tészta váltakozva. A lényeg, hogy a lasagne tetejére kerüljön az utolsó adag ragu.",
+                "Megszórjuk reszelt sajttal, alufóliával letakarva, 170 Celsius-fokra előmelegített sütőben, kb. 35-40 perc alatt készre sütjük (amíg a tészta megpuhul, a sajt szépen megbarnul)."
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Krémes sertéskarajos tészta",
+            "category": "főétel",
+            "servings": 3,
+            "ingredients": [
+                {
+                    "id": 0,
+                    "name": "sertéskaraj",
+                    "quantity": 500,
+                    "unit": "g"
+                },
+                {
+                    "id": 1,
+                    "name": "spagetti",
+                    "quantity": 250,
+                    "unit": "g"
+                },
+                {
+                    "id": 2,
+                    "name": "vöröshagyma",
+                    "quantity": 1,
+                    "unit": "fej"
+                },
+                {
+                    "id": 3,
+                    "name": "fokhagyma",
+                    "quantity": 2,
+                    "unit": "gerezd"
+                },
+                {
+                    "id": 4,
+                    "name": "csemegekukorica",
+                    "quantity": 100,
+                    "unit": "g"
+                },
+                {
+                    "id": 5,
+                    "name": "főzőtejszín",
+                    "quantity": 200,
+                    "unit": "ml"
+                },
+                {
+                    "id": 6,
+                    "name": "vaj",
+                    "quantity": 2,
+                    "unit": "ek"
+                },
+                {
+                    "id": 7,
+                    "name": "só",
+                    "quantity": null,
+                    "unit": "ízlés szerint"
+                },
+                {
+                    "id": 8,
+                    "name": "bors",
+                    "quantity": null,
+                    "unit": "ízlés szerint"
+                },
+                {
+                    "id": 9,
+                    "name": "petrezselyemzöld",
+                    "quantity": null,
+                    "unit": "ízlés szerint"
+                },
+                {
+                    "id": 10,
+                    "name": "reszelt sajt",
+                    "quantity": null,
+                    "unit": "ízlés szerint"
+                }
+            ],
+            "instructions": [
+                "A tésztát enyhén sós vízben megfőzzük, majd leszűrjük. A karajt ízlés szerint sózzuk és borsozzuk.",
+                "Közben a felcsíkozott karajt a kevés olajon, megpirítjuk míg színt kap.",
+                "Hozzáadjuk a vöröshagymát, fokhagymát, pár- perc után hozzákeverjük a kukoricát majd felöntjük a tejszínnel kevés reszelt sajttal megszórjuk.",
+                "Ízlés szerint sózzuk és borsozzuk, alacsony lángon pár - perc alatt összeforraljuk. A leszűrt tésztát beleforgatjuk a krémes szószba. Tálaláskor, még megszórjuk reszelt sajttal és friss zöldfűszerekkel. "
+            ]
+        }
+    ],
+    "menus": [
+        {
+            "id": 0,
+            "day": "Hétfő",
+            "recipes": [
+                "Krémes sertéskarajos tészta",
+                "Rántotta"
+            ]
+        },
+        {
+            "id": 1,
+            "day": "Kedd",
+            "recipes": [
+                "Lasagne"
+            ]
+        },
+        {
+            "id": 2,
+            "day": "Szerda",
+            "recipes": [
+                "Palacsinta",
+                "Rántotta"
+            ]
+        },
+        {
+            "id": 3,
+            "day": "Csütörtök",
+            "recipes": []
+        },
+        {
+            "id": 4,
+            "day": "Péntek",
+            "recipes": []
+        },
+        {
+            "id": 5,
+            "day": "Szombat",
+            "recipes": [
+                "Palacsinta",
+                "Rántotta",
+                "Lasagne",
+                "Krémes sertéskarajos tészta"
+            ]
+        },
+        {
+            "id": 6,
+            "day": "Vasárnap",
+            "recipes": []
+        }
+    ],
+    "pantry": [
+        {
+            "id": 0,
+            "name": "liszt",
+            "quantity": 0.0,
+            "unit": "g"
+        },
+        {
+            "id": 1,
+            "name": "tojás",
+            "quantity": 0.0,
+            "unit": "db"
+        },
+        {
+            "id": 2,
+            "name": "tej",
+            "quantity": 0.0,
+            "unit": "ml"
+        }
+    ],
+    "shopping_list": [
+        {
+            "id": 0,
+            "name": "sertéskaraj",
+            "quantity": 1000.0,
+            "unit": "g"
+        },
+        {
+            "id": 1,
+            "name": "spagetti",
+            "quantity": 500.0,
+            "unit": "g"
+        },
+        {
+            "id": 2,
+            "name": "vöröshagyma",
+            "quantity": 4.0,
+            "unit": "fej"
+        },
+        {
+            "id": 3,
+            "name": "fokhagyma",
+            "quantity": 8.0,
+            "unit": "gerezd"
+        },
+        {
+            "id": 4,
+            "name": "csemegekukorica",
+            "quantity": 200.0,
+            "unit": "g"
+        },
+        {
+            "id": 5,
+            "name": "főzőtejszín",
+            "quantity": 400.0,
+            "unit": "ml"
+        },
+        {
+            "id": 6,
+            "name": "vaj",
+            "quantity": 18.0,
+            "unit": "ek"
+        },
+        {
+            "id": 7,
+            "name": "só",
+            "quantity": null,
+            "unit": "ízlés szerint"
+        },
+        {
+            "id": 8,
+            "name": "bors",
+            "quantity": null,
+            "unit": "ízlés szerint"
+        },
+        {
+            "id": 9,
+            "name": "petrezselyemzöld",
+            "quantity": null,
+            "unit": "ízlés szerint"
+        },
+        {
+            "id": 10,
+            "name": "reszelt sajt",
+            "quantity": null,
+            "unit": "ízlés szerint"
+        },
+        {
+            "id": 11,
+            "name": "tojás",
+            "quantity": 10.0,
+            "unit": "db"
+        },
+        {
+            "id": 12,
+            "name": "tej",
+            "quantity": 2750.0,
+            "unit": "ml"
+        },
+        {
+            "id": 13,
+            "name": "sajt",
+            "quantity": 290.0,
+            "unit": "g"
+        },
+        {
+            "id": 15,
+            "name": "darált hús",
+            "quantity": 2.0,
+            "unit": "kg"
+        },
+        {
+            "id": 16,
+            "name": "paradicsomszósz",
+            "quantity": 2.0,
+            "unit": "l"
+        },
+        {
+            "id": 17,
+            "name": "lasagne tészta",
+            "quantity": 100.0,
+            "unit": "dkg"
+        },
+        {
+            "id": 20,
+            "name": "liszt",
+            "quantity": 600.0,
+            "unit": "g"
+        },
+        {
+            "id": 25,
+            "name": "bazsalikom",
+            "quantity": null,
+            "unit": "ízlés szerint"
+        },
+        {
+            "id": 19,
+            "name": "rizs",
+            "quantity": 1.0,
+            "unit": "kg"
+        }
+    ]
+}

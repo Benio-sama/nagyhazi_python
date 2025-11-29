@@ -2,19 +2,19 @@
     {
         "id": 0,
         "name": "liszt",
-        "quantity": 1000,
+        "quantity": 0.0,
         "unit": "g"
     },
     {
         "id": 1,
         "name": "tojás",
-        "quantity": 2,
+        "quantity": 0.0,
         "unit": "db"
     },
     {
         "id": 2,
         "name": "tej",
-        "quantity": 100,
+        "quantity": 0.0,
         "unit": "ml"
     }
 ]

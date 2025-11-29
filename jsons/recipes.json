@@ -8,19 +8,19 @@
             {
                 "id": 0,
                 "name": "liszt",
-                "quantity": 200,
+                "quantity": 200.0,
                 "unit": "g"
             },
             {
                 "id": 1,
                 "name": "tojás",
-                "quantity": 2,
+                "quantity": 2.0,
                 "unit": "db"
             },
             {
                 "id": 2,
                 "name": "tej",
-                "quantity": 300,
+                "quantity": 300.0,
                 "unit": "ml"
             }
         ],
@@ -153,43 +153,43 @@
             {
                 "id": 0,
                 "name": "sertéskaraj",
-                "quantity": 501,
+                "quantity": 500,
                 "unit": "g"
             },
             {
                 "id": 1,
                 "name": "spagetti",
-                "quantity": 251,
+                "quantity": 250,
                 "unit": "g"
             },
             {
                 "id": 2,
                 "name": "vöröshagyma",
-                "quantity": 3,
+                "quantity": 1,
                 "unit": "fej"
             },
             {
                 "id": 3,
                 "name": "fokhagyma",
-                "quantity": 3,
+                "quantity": 2,
                 "unit": "gerezd"
             },
             {
                 "id": 4,
                 "name": "csemegekukorica",
-                "quantity": 101,
+                "quantity": 100,
                 "unit": "g"
             },
             {
                 "id": 5,
                 "name": "főzőtejszín",
-                "quantity": 251,
+                "quantity": 200,
                 "unit": "ml"
             },
             {
                 "id": 6,
                 "name": "vaj",
-                "quantity": 3,
+                "quantity": 2,
                 "unit": "ek"
             },
             {
@@ -222,6 +222,639 @@
             "Közben a felcsíkozott karajt a kevés olajon, megpirítjuk míg színt kap.",
             "Hozzáadjuk a vöröshagymát, fokhagymát, pár- perc után hozzákeverjük a kukoricát majd felöntjük a tejszínnel kevés reszelt sajttal megszórjuk.",
             "Ízlés szerint sózzuk és borsozzuk, alacsony lángon pár - perc alatt összeforraljuk. A leszűrt tésztát beleforgatjuk a krémes szószba. Tálaláskor, még megszórjuk reszelt sajttal és friss zöldfűszerekkel. "
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Karfiolleves habkönnyű daragombóccal",
+        "category": "leves",
+        "servings": 4,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "zeller",
+                "quantity": 1,
+                "unit": "szál"
+            },
+            {
+                "id": 1,
+                "name": "víz",
+                "quantity": 2,
+                "unit": "ek"
+            },
+            {
+                "id": 2,
+                "name": "teljes kiőrlésű liszt",
+                "quantity": 2,
+                "unit": "ek"
+            },
+            {
+                "id": 3,
+                "name": "búzadara",
+                "quantity": 4,
+                "unit": "ek"
+            },
+            {
+                "id": 4,
+                "name": "olaj",
+                "quantity": 1,
+                "unit": "ek"
+            },
+            {
+                "id": 5,
+                "name": "tojás",
+                "quantity": 2,
+                "unit": "db"
+            },
+            {
+                "id": 6,
+                "name": "csípős gulyáskrém",
+                "quantity": 1,
+                "unit": "ek"
+            },
+            {
+                "id": 7,
+                "name": "petrezselyemzöld",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 8,
+                "name": "fehérrépa",
+                "quantity": 1,
+                "unit": "db"
+            },
+            {
+                "id": 9,
+                "name": "karfiol",
+                "quantity": 600,
+                "unit": "g"
+            },
+            {
+                "id": 10,
+                "name": "paprika",
+                "quantity": 2,
+                "unit": "db"
+            },
+            {
+                "id": 11,
+                "name": "vöröshagyma",
+                "quantity": 1,
+                "unit": "db"
+            },
+            {
+                "id": 12,
+                "name": "fokhagyma",
+                "quantity": 2,
+                "unit": "gerezd"
+            },
+            {
+                "id": 13,
+                "name": "őrölt bors",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 14,
+                "name": "só",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 15,
+                "name": "víz",
+                "quantity": 2,
+                "unit": "l"
+            },
+            {
+                "id": 16,
+                "name": "csirkefarhát",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "id": 17,
+                "name": "zöldség zöld",
+                "quantity": 1,
+                "unit": "csokor"
+            },
+            {
+                "id": 18,
+                "name": "karalábé",
+                "quantity": 1,
+                "unit": "db"
+            },
+            {
+                "id": 19,
+                "name": "zeller",
+                "quantity": 0.5,
+                "unit": "szál"
+            },
+            {
+                "id": 20,
+                "name": "sárgarépa",
+                "quantity": 2,
+                "unit": "szál"
+            }
+        ],
+        "instructions": [
+            "A csirkefarhátat hideg vízben főzni kezdjük, habját leszedjük.",
+            "Sóval, borssal, fokhagymával, héjas vöröshagymával, paprikával, zellerrel, fehérrépával, zöldségzölddel ízesítjük.",
+            "A karfiolt rózsáira szedjük, megmossuk, félretesszük.",
+            "Amikor a hús és zöldségek majdnem puhák, hozzáadjuk a karfiolt.",
+            "Csípős gulyáskrémmel színezzük és ízesítjük a levest.",
+            "Tovább főzzük, amíg minden puha nem lesz.",
+            "A tojásokat szétválasztjuk. A fehérjét csipet sóval kemény habbá verjük.",
+            "A sárgájához olaj, búzadara, teljes kiőrlésű liszt, víz, só, bors, petrezselyemzöldet adunk, elkeverjük.",
+            "A masszát a gombóchoz a fehérjehabbal lazítjuk, hogy habkönnyű legyen.",
+            "Forró, sós vízben szaggatóval gombócokat formázunk.",
+            "Addig főzzük, amíg a gombócok feljönnek a víz tetejére, és az állaguk könnyen kezelhető.",
+            "Leszűrjük, leöblítjük, lecsepegtetjük.",
+            "A daragombócokat külön tálban kínáljuk a forró, ízes karfiolleves mellé."
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Fűszeres tőzegáfonyával göngyölt pulykamell",
+        "category": "főétel",
+        "servings": 6,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "pulykamell",
+                "quantity": 1000,
+                "unit": "g"
+            },
+            {
+                "id": 1,
+                "name": "kandírozott tőzegáfonya",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "id": 2,
+                "name": "natúr dióbél",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "id": 3,
+                "name": "feketeerdő sonka",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "id": 4,
+                "name": "zeller",
+                "quantity": 2,
+                "unit": "szál"
+            },
+            {
+                "id": 5,
+                "name": "vöröshagyma",
+                "quantity": 1,
+                "unit": "fej"
+            },
+            {
+                "id": 6,
+                "name": "tojássárgája",
+                "quantity": 3,
+                "unit": "db"
+            },
+            {
+                "id": 7,
+                "name": "olívaolaj",
+                "quantity": 2,
+                "unit": "ek"
+            },
+            {
+                "id": 8,
+                "name": "beáztatott kenyér",
+                "quantity": 2,
+                "unit": "szelet"
+            },
+            {
+                "id": 9,
+                "name": "snidling",
+                "quantity": 1,
+                "unit": "ek"
+            },
+            {
+                "id": 10,
+                "name": "petrezselyem",
+                "quantity": 1,
+                "unit": "ek"
+            },
+            {
+                "id": 11,
+                "name": "kakukkfű",
+                "quantity": 1,
+                "unit": "tk"
+            },
+            {
+                "id": 12,
+                "name": "só",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 13,
+                "name": "bors",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            }
+        ],
+        "instructions": [
+            "A diót száraz serpenyőben megpirítjuk, majd finomra aprítjuk. A vöröshagymát, zellert, sonkát, tőzegáfonyát, diót, snidlinget és petrezselymet is felaprítjuk.",
+            "Olívaolajat hevítünk, ebben megdinszteljük a hagymát. Hozzáadjuk a sonkát, zellert, diót és tőzegáfonyát, összepirítjuk, majd hagyjuk kissé kihűlni.",
+            "A töltelékhez hozzákeverjük a tojássárgákat, a beáztatott és kinyomkodott kenyérszeleteket és a fűszereket (só, bors, kakukkfű), alaposan elkeverjük.",
+            "A pulykamell filét hosszában kivágjuk, klopfolva kb. 1 cm vastagságúra nyújtjuk, majd sózzuk, borsozzuk.",
+            "A tölteléket rásimítjuk a húsra, majd feltekerjük. Spárgával vagy zsineggel megkötjük, hogy tartsa a formáját.",
+            "Sütőpapírral bélelt tepsibe tesszük, alufóliával lefedjük, és előmelegített sütőben kb. 45 percig sütjük fóliával, majd további 15–20 percet fólia nélkül, hogy a külseje is megpiruljon.",
+            "Tálalás előtt lefedőzsinegtől megszabadítjuk, felszeleteljük, ízlés szerint salátával vagy körettel kínáljuk."
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Klasszikus majonézes krumplisaláta",
+        "category": "köret",
+        "servings": 8,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "krumpli",
+                "quantity": 1,
+                "unit": "kg"
+            },
+            {
+                "id": 1,
+                "name": "lilahagyma",
+                "quantity": 2,
+                "unit": "fej"
+            },
+            {
+                "id": 2,
+                "name": "víz",
+                "quantity": 1,
+                "unit": "l"
+            },
+            {
+                "id": 3,
+                "name": "cukor",
+                "quantity": 80,
+                "unit": "g"
+            },
+            {
+                "id": 4,
+                "name": "ecet",
+                "quantity": 50,
+                "unit": "ml"
+            },
+            {
+                "id": 5,
+                "name": "só",
+                "quantity": 1,
+                "unit": "tk"
+            },
+            {
+                "id": 6,
+                "name": "majonéz",
+                "quantity": 6,
+                "unit": "ek"
+            },
+            {
+                "id": 7,
+                "name": "tejföl",
+                "quantity": 250,
+                "unit": "ml"
+            },
+            {
+                "id": 8,
+                "name": "só",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 9,
+                "name": "bors",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 9,
+                "name": "bors",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 10,
+                "name": "mustár",
+                "quantity": 1,
+                "unit": "ek"
+            },
+            {
+                "id": 11,
+                "name": "snidling",
+                "quantity": 1,
+                "unit": "csokor"
+            },
+            {
+                "id": 12,
+                "name": "petrezselyem",
+                "quantity": 1,
+                "unit": "csokor"
+            },
+            {
+                "id": 13,
+                "name": "cukor",
+                "quantity": 2,
+                "unit": "ek"
+            }
+        ],
+        "instructions": [
+            "A burgonyákat megpucoljuk, és sós vízben feltesszük főni. (Ne főzzük szét őket teljesen, maradjon meg a tartásuk.)",
+            "Amíg fő a burgonya, készítsük el az ecetes-cukros pácot és a majonézes mártást.",
+            "A krumplipáchoz egy mély tálban keverjük el a langyos vizet a cukorral, a sóval és az ecettel. Ha szükséges, adjunk hozzá még plusz ecetet vagy cukrot. A végeredménynek savanykás-édesnek kell lennie.",
+            "Vágjuk finomra a lilahagymát, a snidlinget és a petrezselymet. Az öntethez egy tálban keverjük el a majonézt a tejföllel, mustárral, cukorral, ízlés szerint sóval, borssal és a finomra aprított hagymával és fűszernövényekkel. Kóstoljuk meg, hogy kellően harmonizálnak-e az ízek.",
+            "A megfőtt burgonyát szűrjük le, és öntsük fel hideg vízzel, majd hagyjuk hűlni kb. negyed órát (nem kell teljesen kihűlnie, csak annyira, hogy ne legyen forró, és szeletelhető legyen). Ezt követően karikázzuk fel, és tegyük bele a páclébe. Ebben hagyjuk állni 1-2 órát, amíg teljesen kihűl (hűtőben).",
+            "Szűrjük le a burgonyát, és tegyük át a majonézes keverékbe. Forgassuk át jó alaposan, és rakjuk a hűtőbe 1-2 órára, hogy összeérjenek az ízek.",
+            "Finomra vágott snidlinggel és lila hagymával (vagy akár sült hagymával) megszórva tálaljuk."
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Padlizsánkrém egyszerűen",
+        "category": "előétel",
+        "servings": 4,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "padlizsán",
+                "quantity": 2,
+                "unit": "db"
+            },
+            {
+                "id": 1,
+                "name": "fokhagyma",
+                "quantity": 3,
+                "unit": "gerezd"
+            },
+            {
+                "id": 2,
+                "name": "majonéz",
+                "quantity": 2,
+                "unit": "ek"
+            },
+            {
+                "id": 3,
+                "name": "olívaolaj",
+                "quantity": 2,
+                "unit": "ek"
+            },
+            {
+                "id": 4,
+                "name": "só",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 5,
+                "name": "bors",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            }
+        ],
+        "instructions": [
+            "Melegítsük elő a sütőt. Tegyünk egy tepsibe sütőpapírt a padlizsán alá, amit szurkáljunk meg. A fokhagymát héjastul tegyük hozzá, majd locsoljuk meg olívaolajjal a padlizsánokat.",
+            "Tegyük be a sütőbe, és addig süssük, amíg össze nem esnek a padlizsánok. Miután kihűlt kissé, kaparjuk ki a belsejét. A sült fokhagymával járjunk el ugyanígy.",
+            "Adjuk hozzá a majonézt, sózzuk, borsozzuk, majd turmixoljuk össze."
+        ]
+    },
+    {
+        "id": 7,
+        "name": "A sajtos leveles pogácsa",
+        "category": "sütemény",
+        "servings": 10,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "finomliszt",
+                "quantity": 600,
+                "unit": "g"
+            },
+            {
+                "id": 1,
+                "name": "sertészsír",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "id": 2,
+                "name": "vaj",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "id": 3,
+                "name": "tojássárgája",
+                "quantity": 2,
+                "unit": "db"
+            },
+            {
+                "id": 4,
+                "name": "tojás",
+                "quantity": 1,
+                "unit": "db"
+            },
+            {
+                "id": 5,
+                "name": "só",
+                "quantity": 1,
+                "unit": "ek"
+            },
+            {
+                "id": 6,
+                "name": "tejföl",
+                "quantity": 175,
+                "unit": "g"
+            },
+            {
+                "id": 7,
+                "name": "sajt",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "id": 8,
+                "name": "tej",
+                "quantity": 50,
+                "unit": "ml"
+            },
+            {
+                "id": 9,
+                "name": "cukor",
+                "quantity": 1,
+                "unit": "késhegynyi"
+            },
+            {
+                "id": 10,
+                "name": "friss élesztő",
+                "quantity": 30,
+                "unit": "g"
+            }
+        ],
+        "instructions": [
+            "A cukros, langyos tejben felfuttatjuk az élesztőt. A lisztet átszitáljuk. Hozzáadjuk a sót, elmorzsoljuk a zsírral, összegyúrjuk a tojássárgákkal, tejföllel és a felfuttatott élesztővel.",
+            "Lisztezett deszkán pihentetés nélkül 1/2 cm vastagra nyújtjuk, megkenjük olvasztott vajjal és megszórjuk reszelt sajttal. Összehajtjuk. Ezt a műveletet még kétszer egymás után megismételjük.",
+            "Negyedszerre 3 cm magasra nyújtjuk, a tetejét beirdaljuk kockásra és szaggatjuk. Sütőpapírral bélelt tepsibe helyezzük és kb. 45 percig kelesztjük.",
+            "A tetejét lekenjük felvert tojással, mindegyikre teszünk egy csipet reszelt sajtot, és 175 fokon szép pirosra sütjük."
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Asszony dicséret - Diós-lekváros linzersüti",
+        "category": "sütemény",
+        "servings": 6,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "finomliszt",
+                "quantity": 30,
+                "unit": "dkg"
+            },
+            {
+                "id": 1,
+                "name": "vaj",
+                "quantity": 15,
+                "unit": "dkg"
+            },
+            {
+                "id": 2,
+                "name": "porcukor",
+                "quantity": 30,
+                "unit": "dkg"
+            },
+            {
+                "id": 3,
+                "name": "citrom (leve és reszelt héja)",
+                "quantity": 1,
+                "unit": "db"
+            },
+            {
+                "id": 4,
+                "name": "szódabikarbóna",
+                "quantity": 1,
+                "unit": "kk"
+            },
+            {
+                "id": 5,
+                "name": "tojássárgája",
+                "quantity": 5,
+                "unit": "db"
+            },
+            {
+                "id": 6,
+                "name": "sárgabaracklekvár",
+                "quantity": 5,
+                "unit": "dkg"
+            },
+            {
+                "id": 7,
+                "name": "darált dió",
+                "quantity": 25,
+                "unit": "dkg"
+            },
+            {
+                "id": 8,
+                "name": "tojásfehérje",
+                "quantity": 5,
+                "unit": "db"
+            }
+        ],
+        "instructions": [
+            "Tészta hozzávalóit összegyúrjuk. (finomliszt, vaj, porcukor 10 dkg, fél citrom leve és reszelt héja, szódabikarbóna, tojássárgája)",
+            "Sütőpapírral bélelt tepsibe belenyújtjuk (nyomkodjuk), és előmelegített sütőbe tesszük. 15 percig félkészre sütjük.",
+            "A tojásfehérjét elektromos habverővel felverjük.",
+            "Először a cukrot, majd a citromot, végül a már kemény habhoz a diót is hozzáadjuk (itt már lassú fokozaton).",
+            "Baracklekvárral megkenjük a félig sült tésztát.",
+            "Erre kenjük a diós-habos krémet.",
+            "Min. 30 percig sütjük (hab megkeményedjen), és kockákra szeletelve (baracklekvárral) tálaljuk."
+        ]
+    },
+    {
+        "id": 9,
+        "name": "A tökéletes marhapörkölt",
+        "category": "főétel",
+        "servings": 4,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "sertészsír",
+                "quantity": 2,
+                "unit": "ek"
+            },
+            {
+                "id": 1,
+                "name": "vöröshagyma",
+                "quantity": 5,
+                "unit": "fej"
+            },
+            {
+                "id": 2,
+                "name": "tölteni való paprika",
+                "quantity": 2,
+                "unit": "db"
+            },
+            {
+                "id": 3,
+                "name": "marhanyak",
+                "quantity": 1.2,
+                "unit": "kg"
+            },
+            {
+                "id": 4,
+                "name": "fűszerpaprika",
+                "quantity": 2,
+                "unit": "ek"
+            },
+            {
+                "id": 5,
+                "name": "fűszerpaprika",
+                "quantity": 2,
+                "unit": "ek"
+            },
+            {
+                "id": 6,
+                "name": "őrölt kömény",
+                "quantity": 1,
+                "unit": "tk"
+            },
+            {
+                "id": 7,
+                "name": "só",
+                "quantity": null,
+                "unit": "ízlés szerint"
+            },
+            {
+                "id": 8,
+                "name": "paradicsom",
+                "quantity": 2,
+                "unit": "db"
+            },
+            {
+                "id": 9,
+                "name": "száraz fehérbor",
+                "quantity": 100,
+                "unit": "ml"
+            }
+        ],
+        "instructions": [
+            "A tökéletes marhapörkölthöz egy nagyobb lábasban zsírt hevítünk, és elkezdjük lepirítani benne a finomra vágott vöröshagymát, közepes lángon 10 percig, majd rádobjuk az apró kockákra vágott paprikát, és azzal is pirítjuk további 5 percig.",
+            "Ezután hozzáadjuk a 2 cm-es kockákra vágott húst, átpirítjuk, majd megszórjuk fűszerpaprikával és köménnyel.",
+            "Sózzuk, és beletesszük a felkockázott paradicsomot is. Öntünk alá 100 ml vizet, és közepes lángon zsírjára pirítjuk, vagyis addig pároljuk, amíg a víz elfő alóla.",
+            "Ekkor újabb 100 ml víz és újabb zsírjára pirítás következik. Ezt még egyszer megismételjük, majd felöntjük 500 ml vízzel, és közepes lángon addig főzzük, amíg a hús megpuhul.",
+            "Közben gyakran kevergetjük, nehogy leégjen, és ha szükséges, pótoljuk alatta a folyadékot. Amikor a hús már majdnem teljesen puha, hozzáöntjük a bort is, felforraljuk, és még 30 percig főzzük alacsony lángon.",
+            "Én nokedlit tálaltam mellé, mert szerintem a pörköltnek az elengedhetetlen kísérője, de mindenki kedvére variálhatja a köretet. Egy biztos, hogy valamilyen savanyúságot mindenképp érdemes mellé adni."
         ]
     }
 ]

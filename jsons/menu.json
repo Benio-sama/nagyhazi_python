@@ -3,19 +3,24 @@
         "id": 0,
         "day": "Hétfő",
         "recipes": [
-            "Palacsinta",
+            "Krémes sertéskarajos tészta",
             "Rántotta"
         ]
     },
     {
         "id": 1,
         "day": "Kedd",
-        "recipes": []
+        "recipes": [
+            "Lasagne"
+        ]
     },
     {
         "id": 2,
         "day": "Szerda",
-        "recipes": []
+        "recipes": [
+            "Palacsinta",
+            "Rántotta"
+        ]
     },
     {
         "id": 3,
@@ -30,7 +35,12 @@
     {
         "id": 5,
         "day": "Szombat",
-        "recipes": []
+        "recipes": [
+            "Palacsinta",
+            "Rántotta",
+            "Lasagne",
+            "Krémes sertéskarajos tészta"
+        ]
     },
     {
         "id": 6,
