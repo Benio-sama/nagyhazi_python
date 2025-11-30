@@ -42,7 +42,7 @@ def add_menu(recipes, menus, pantry, shopping_list):
     print("Napi menü hozzáadása")
     print("0. Mégse")
     for d in menus:
-        print(d.id+1, d.day)
+        print(f"{d.id+1}. {d.day}")
     nap = int(input("Add meg a nap számát: "))
     exit_if_0(nap, menu_menu, recipes, menus, pantry, shopping_list)
     if len(recipes) == 0:
@@ -54,7 +54,7 @@ def add_menu(recipes, menus, pantry, shopping_list):
             print(f"\t- {i.name}")
     print("Elérhető receptek:")
     for r in recipes:
-        print(r.id+1, r.name)
+        print(f"{r.id+1}. {r.name}")
     selected_recipes = []
     recepe_ids = input("Add meg a receptek számait szóközzel elválasztva: ").split(" ")
     exit_if_0(recepe_ids, menu_menu, recipes, menus, pantry, shopping_list)
@@ -87,7 +87,7 @@ def remove_recipe_from_day(recipes, menus, pantry, shopping_list):
                 back_to_menu(remove_recipe_from_day, recipes, menus, pantry, shopping_list)
             else:
                 for r in i.recipes:
-                    print(r.id+1, r.name)
+                    print(f"{r.id+1}. {r.name}")
                 r_ids = input("Add meg a törlendő recept számát (ha többet törölnél, szóközzel elválasztva): ").split(" ")
                 exit_if_0(r_ids, menu_menu, recipes, menus, pantry, shopping_list)
                 delete = []
@@ -127,6 +127,7 @@ def list_menus(menus):
         print(f"{m.day}:")
         for meal in m.recipes:
             print(f"\t- {meal.name}")
+    print()
 
 def list_todays_menu(menus):
     print("A mai menü:")
@@ -139,6 +140,7 @@ def list_todays_menu(menus):
             else:
                 for meal in m.recipes:
                     print(f"\t- {meal.name}")
+    print()
 
 def menu_main(recipes, menus, pantry, shopping_list):
     clear_console()

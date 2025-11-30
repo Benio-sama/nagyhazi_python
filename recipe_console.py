@@ -182,7 +182,7 @@ def modify_recipe_menu(recipes, menus, pantry, shopping_list):
                             print("Hozzávaló törlése")
                             print("Jelenlegi hozzávalók:")
                             for ing in recipe.ingredients:
-                                print(f"{ing.id+1}, {ing.name}")
+                                print(f"{ing.id+1}. {ing.name}")
                             id = int(input("Törlendő hozzávaló id-je: "))
                             for ing in recipe.ingredients:
                                 if ing.id == id-1:

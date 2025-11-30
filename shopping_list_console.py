@@ -28,7 +28,7 @@ def shopping_list_menu(recipes, menus, pantry, shopping_list):
         shopping_list = shopping_list_optimize(new_shopping_list, shopping_list)
         time.sleep(1)
         print("Bevásárlólista optimalizálva.")
-        shopping_list_menu(recipes, menus, pantry, shopping_list)
+        back_to_menu(shopping_list_menu, recipes, menus, pantry, shopping_list)
     elif choice == '2':
         clear_console()
         list_shopping_list(shopping_list)
@@ -46,7 +46,6 @@ def shopping_list_menu(recipes, menus, pantry, shopping_list):
         shopping_list = add_shopping_list_item(recipes, menus, pantry, shopping_list)
         back_to_menu(shopping_list_menu, recipes, menus, pantry, shopping_list)
     elif choice == '6':
-        clear_console()
         modify_shopping_list_item(recipes, menus, pantry, shopping_list)
     elif choice == '7':
         clear_console()
@@ -160,6 +159,7 @@ def list_shopping_list(shopping_list):
                 print(f"\t- {item.name}: {item.unit}")
             else:
                 print(f"\t- {item.name}: {item.quantity} {item.unit}")
+    print()
 
 def delete_shopping_list(shopping_list):
     print("Bevásárlólista törlése")
@@ -188,6 +188,7 @@ def add_shopping_list_item(recipes, menus, pantry, shopping_list):
     return shopping_list
 
 def modify_shopping_list_item(recipes, menus, pantry, shopping_list):
+    clear_console()
     print("Tétel módosítása")
     print("0. Mégse")
     for item in shopping_list.items:

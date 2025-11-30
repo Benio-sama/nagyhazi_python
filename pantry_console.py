@@ -118,7 +118,7 @@ def delete_ingredient(recipes, menus, pantry, shopping_list):
     print("Hozzávaló törlése")
     print("0. Mégse")
     for i in pantry:
-        print(i.id+1, i.name)
+        print(f"{i.id+1}. {i.name}")
     ing_id = int(input("Add meg a törlendő hozzávaló számát: "))
     exit_if_0(ing_id, pantry_menu, recipes, menus, pantry, shopping_list)
     for i in pantry:
