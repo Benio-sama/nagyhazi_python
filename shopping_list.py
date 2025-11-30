@@ -11,6 +11,8 @@ class ShoppingList_Item():
         self.unit = unit
 
     def __str__(self):
+        if self.quantity is None:
+            return f"{self.name}: {self.unit}"
         return f"{self.name}: {self.quantity} {self.unit}"
     
     def to_dict(self):

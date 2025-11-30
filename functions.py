@@ -7,7 +7,7 @@ def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def exit_if_0(value, menu, *args):
-    if (isinstance(value, list) and '0' in value) or (isinstance(value, float) and value == 0) or value == '0':
+    if (isinstance(value, list) and '0' in value) or (isinstance(value, float) and value == 0) or value == '0' or value == 0:
         print("Vissza a menübe.")
         time.sleep(1)
         clear_console()
@@ -28,8 +28,8 @@ def conversion(item, new_unit: str):
         ('kg', 'g'): 1000,
         ('kg', 'dkg'): 100,
         ('ml', 'l'): 0.001,
-        ('ml', 'dl'): 0.1,
-        ('dl', 'ml'): 10,
+        ('ml', 'dl'): 0.01,
+        ('dl', 'ml'): 100,
         ('dl', 'l'): 0.1,
         ('l', 'dl'): 10,
         ('l', 'ml'): 1000,
@@ -49,9 +49,25 @@ def conversion(item, new_unit: str):
         ('kk', 'tk'): 1/2,
         ('tk', 'kk'): 2,
         ('cup', 'ml'): 240,
+        ('ml', 'cup'): 1/240, 
         ('ml', 'tk'): 0.2,
+        ('tk', 'ml'): 5,
         ('ml', 'ek'): 1/15,
-        ('ml', 'cup'): 1/240,
+        ('ek', 'ml'): 15,
+        ('ml', 'kk'): 1/2.5,
+        ('kk', 'ml'): 2.5,
+        ('ek', 'l'): 0.015,
+        ('l', 'ek'): 66.6667,
+        ('tk', 'l'): 0.005,
+        ('l', 'tk'): 200,
+        ('kk', 'l'): 0.0025,
+        ('l', 'kk'): 400,
+        ('ek', 'dl'): 0.15,
+        ('dl', 'ek'): 6.6666667,
+        ('tk', 'dl'): 0.05,
+        ('dl', 'tk'): 20,
+        ('kk', 'dl'): 0.025,
+        ('dl', 'kk'): 40,
         ('l', 'cup'): 4.167,
         ('cup', 'l'): 0.24,
     }
@@ -85,13 +101,17 @@ def conversion(item, new_unit: str):
         'vaj': 0.96,
         'margarin': 0.95,
         'zsír': 0.92,
+        'sertészsír': 0.92,
         'kókuszolaj': 0.92,
         'tej': 1.03,
         'tejszín': 1.01,
         'habtejszín': 1.01,
+        'sűrített_tejszín': 1.20,
         'joghurt': 1.04,
-        'kefir': 1.03,
+        'görög joghurt': 1.10,
+        'kefír': 1.03,
         'tejföl': 1.00,
+        'krémsajt': 1.05,
         'víz': 1.00,
         'almaecet': 1.01,
         'borecet': 1.01,
@@ -142,20 +162,37 @@ def conversion(item, new_unit: str):
         'fokhagymapor': 0.72,
         'hagymapor': 0.56,
         'vaníliapor': 0.45,
-        'kakaópor': 0.45,
         'szárított oregánó': 0.20,
         'szárított bazsalikom': 0.15,
         'szárított petrezselyem': 0.10,
         'szárított majoranna': 0.12,
         'szárított kakukkfű': 0.18,
         'szárított rozmaring': 0.20,
+        'oregánó': 0.6,
+        'bazsalikom': 0.4,
+        'petrezselyem': 0.3,
+        'majoranna': 0.5,
+        'kakukkfű': 0.7,    
+        'rozmaring': 0.8,
+        'kapor': 0.3,
+        'menta': 0.4,
+        'snidling': 0.3,
+        'metélőhagyma': 0.3,
+        'koriander': 0.4,
+        'zsálya': 0.5,
+        'zúzott fokhagyma': 0.8,
+        'aprított vöröshagyma': 0.6,
+        'reszelt hagyma': 0.75,
+        'reszelt gyömbér': 0.6,
+        'aprított erőspaprika': 0.55,
+        'aprított chili': 0.50,
         'majonéz': 0.95,
         'mustár': 1.14,
         'ketchup': 1.10,
         'bbq_szósz': 1.20,
         'tartármártás': 0.98,
         'fokhagymás_szósz': 1.05,
-        'csípős_szósz': 1.00,   # átlag, típusfüggő
+        'csípős_szósz': 1.00,
         'majonézalapú_szósz': 0.95,
         'joghurtos_szósz': 1.04,
         'csiliszósz': 1.12,
@@ -163,12 +200,12 @@ def conversion(item, new_unit: str):
         'szójaszósz': 1.20,
         'teriyaki_szósz': 1.17,
         'halmártás': 1.20,
-        'balzsamecet_krém': 1.33,  
+        'balzsamecet krém': 1.33,  
     }
 
     if item.unit == new_unit:
         return item.quantity
-    if item.unit in ('ek', 'tk') and new_unit in ('g', 'dkg', 'kg'):
+    if item.unit in ('kk', 'ek', 'tk') and new_unit in ('g', 'dkg', 'kg'):
         if item.name not in volume:
             print(f"Nincs sűrűségi adat ehhez a hozzávalóhoz: {item.name}")
             return False
@@ -181,7 +218,7 @@ def conversion(item, new_unit: str):
         if new_unit == 'kg':
             return gramm / 1000
 
-    if item.unit in ('g', 'dkg', 'kg') and new_unit in ('ek', 'tk'):
+    if item.unit in ('g', 'dkg', 'kg') and new_unit in ('kk', 'ek', 'tk'):
         if item.name not in volume:
             print(f"Nincs sűrűségi adat ehhez a hozzávalóhoz: {item.name}")
             return False
@@ -192,6 +229,9 @@ def conversion(item, new_unit: str):
             gramm *= 1000
         ml = gramm / volume[item.name]
         return ml / spoon_ml[new_unit]
+    
+    if item.unit == "ízlés szerint" or new_unit == "ízlés szerint":
+        return False
 
     key = (item.unit, new_unit)
     if key in conversions:
@@ -205,6 +245,7 @@ def modify_body(headerfunc, s, value, setter, menufunc, *args):
     clear_console()
     headerfunc(s, value)
     new_value = input(f"Új {s.lower()}: ")
+    exit_if_0(new_value, menufunc, *args)
     if new_value:
         setter(int(new_value) if s == "Adag" else new_value)
         print("Sikeres módosítás.")
@@ -249,8 +290,8 @@ def special_round(x, spec, down):
 def modify_quantity(item):
     print(f"Jelenlegi mértékegység: {item.unit}")
     new_unit = input(f"Add meg az új mértékegységet: ")
-    item.unit = new_unit
     converted_quantity = conversion(item, new_unit)
+    item.unit = new_unit
     if converted_quantity is not False:
         item.quantity = special_round(converted_quantity, False, False)
         print(f"Sikeres konvertálás!")
@@ -270,3 +311,16 @@ def import_all(filename):
         data.get("pantry", []),
         data.get("shopping_list", [])
     )
+
+def import_from_files():
+    from menu import read_menu_from_file
+    from pantry import read_pantry_from_file
+    from recipes import read_recipe_from_file
+    from shopping_list import read_shopping_list_from_file
+    
+    recipes = read_recipe_from_file('jsons/recipes.json')
+    menus = read_menu_from_file(recipes, 'jsons/menu.json')
+    pantry = read_pantry_from_file('jsons/pantry.json')
+    shopping_list = read_shopping_list_from_file('jsons/shopping_list.json')
+
+    return recipes, menus, pantry, shopping_list

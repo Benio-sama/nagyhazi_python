@@ -5,6 +5,7 @@ import time
 def shopping_list_menu(recipes, menus, pantry, shopping_list):
     from console import main_menu
 
+    save_to_json(shopping_list.items, 'shopping_list.json')
     print("Bevásárlólista kezelése")
     print("1. Bevásárlólista generálása/frissítése")
     print("2. Bevásárlólista megtekintése")
@@ -21,10 +22,10 @@ def shopping_list_menu(recipes, menus, pantry, shopping_list):
     elif choice == '1':
         clear_console()
         print("Bevásárlólista generálása/frissítése...")
-        shopping_list = generate_shopping_list(menus, pantry)
+        new_shopping_list = generate_shopping_list(menus, pantry, shopping_list)
         time.sleep(1)
         print("Bevásárlólista optimalizálása...")
-        shopping_list = shopping_list_optimize(shopping_list)
+        shopping_list = shopping_list_optimize(new_shopping_list, shopping_list)
         time.sleep(1)
         print("Bevásárlólista optimalizálva.")
         shopping_list_menu(recipes, menus, pantry, shopping_list)
@@ -75,21 +76,15 @@ def generate_shopping_list(menus, pantry, shopping_list):
                         break
                 if not found:
                     new_shopping_list.items.append(ShoppingList_Item(len(new_shopping_list.items), ing.name, ing.quantity, ing.unit))  
-    for i in shopping_list.items:
-        found = False
-        for item in new_shopping_list.items:
-            if i.name == item.name:
-                found = True
-        if not found:
-            new_shopping_list.items.append(i)
     save_to_json(pantry, 'pantry.json')
+    new_shopping_list.items.sort(key=lambda x: x.name)
     save_to_json(new_shopping_list.items, 'shopping_list.json')
     print("Bevásárlólista generálva és elmentve shopping_list.json fájlba.")
     return new_shopping_list
 
-def shopping_list_optimize(shopping_list):
+def shopping_list_optimize(new_shopping_list, shopping_list):
     new_list = ShoppingList()
-    for item in shopping_list.items:
+    for item in new_shopping_list.items:
         found = False
         for new_item in new_list.items:
             if item.name == new_item.name:
@@ -105,7 +100,26 @@ def shopping_list_optimize(shopping_list):
                 break
         if not found:
             new_list.items.append(item)
-    print(len(new_list.items))
+    for i in shopping_list.items:
+        found = False
+        for item in new_list.items:
+            if i.name == item.name:
+                if i.unit == item.unit:
+                    item.add_quantity(i)
+                else:
+                    converted_quantity = special_round(conversion(i, item.unit), False, False)
+                    if converted_quantity is not None and converted_quantity is not False:
+                        item.add_quantity(ShoppingList_Item(i.id, i.name, converted_quantity, item.unit))
+                    elif converted_quantity is False:
+                        new_shopping_list.items.append(i)
+                found = True
+                break
+        if not found:
+            max = new_list.items[0].id if len(new_list.items) > 0 else 0
+            for mitem in new_list.items:
+                if mitem.id > max:
+                    max = mitem.id
+            new_list.items.append(ShoppingList_Item(max+1, i.name, i.quantity, i.unit))
     save_to_json(new_list.items, 'shopping_list.json')
     return new_list
 
@@ -142,7 +156,10 @@ def list_shopping_list(shopping_list):
         print("A bevásárlólista üres.")
     else:
         for item in shopping_list.items:
-            print(f"- {item.name}: {item.quantity} {item.unit}")
+            if item.quantity is None:
+                print(f"\t- {item.name}: {item.unit}")
+            else:
+                print(f"\t- {item.name}: {item.quantity} {item.unit}")
 
 def delete_shopping_list(shopping_list):
     print("Bevásárlólista törlése")
@@ -182,8 +199,11 @@ def modify_shopping_list_item(recipes, menus, pantry, shopping_list):
             print("1. Név módosítása")
             print("2. Mennyiség módosítása")
             print("3. Mértékegység módosítása")
+            print("0. Mégse")
             mod_choice = input("Válassz egy opciót: ")
             match mod_choice:
+                case '0':
+                    modify_shopping_list_item(recipes, menus, pantry, shopping_list)
                 case '1':
                     modify_body(modify_header, "Név", item.name, item._setname, modify_shopping_list_item, recipes, menus, pantry, shopping_list)
                 case '2':
@@ -194,8 +214,9 @@ def modify_shopping_list_item(recipes, menus, pantry, shopping_list):
                     print("2. Konvertálás")
                     print("0. Mégse")
                     unit_choice = input("Válassz egy opciót: ")
-                    exit_if_0(unit_choice, shopping_list_menu, recipes, menus, pantry, shopping_list)
                     match unit_choice:
+                        case '0':
+                            modify_shopping_list_item(recipes, menus, pantry, shopping_list)
                         case '1':
                             modify_body(modify_header, "Mértékegység", item.unit, item._setunit, modify_shopping_list_item, recipes, menus, pantry, shopping_list)
                         case '2':
@@ -207,7 +228,10 @@ def delete_shopping_list_item(recipes, menus, pantry, shopping_list):
     print("Tétel törlése")
     print("0. Mégse")
     for item in shopping_list.items:
-        print(f"{item.id+1}. {item.name}: {item.quantity} {item.unit}")
+        if item.quantity is None:
+            print(f"{item.id+1}. {item.name}: {item.unit}")
+        else:
+            print(f"{item.id+1}. {item.name}: {item.quantity} {item.unit}")
     item_id = int(input("Add meg a törlendő tétel számát: "))
     exit_if_0(item_id, shopping_list_menu, recipes, menus, pantry, shopping_list)
     for item in shopping_list.items:

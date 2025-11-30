@@ -3,48 +3,55 @@
         "id": 0,
         "day": "Hétfő",
         "recipes": [
-            "Krémes sertéskarajos tészta",
-            "Rántotta"
+            "Rántotta",
+            "A tökéletes marhapörkölt"
         ]
     },
     {
         "id": 1,
         "day": "Kedd",
         "recipes": [
-            "Lasagne"
+            "Padlizsánkrém egyszerűen",
+            "Karfiolleves habkönnyű daragombóccal"
         ]
     },
     {
         "id": 2,
         "day": "Szerda",
         "recipes": [
-            "Palacsinta",
-            "Rántotta"
+            "A sajtos leveles pogácsa"
         ]
     },
     {
         "id": 3,
         "day": "Csütörtök",
-        "recipes": []
+        "recipes": [
+            "Fűszeres tőzegáfonyával göngyölt pulykamell",
+            "Asszony dicséret - Diós-lekváros linzersüti"
+        ]
     },
     {
         "id": 4,
         "day": "Péntek",
-        "recipes": []
+        "recipes": [
+            "Palacsinta",
+            "Paprikás krumpli"
+        ]
     },
     {
         "id": 5,
         "day": "Szombat",
         "recipes": [
-            "Palacsinta",
-            "Rántotta",
-            "Lasagne",
-            "Krémes sertéskarajos tészta"
+            "Rántotta"
         ]
     },
     {
         "id": 6,
         "day": "Vasárnap",
-        "recipes": []
+        "recipes": [
+            "Palacsinta",
+            "Padlizsánkrém egyszerűen",
+            "A sajtos leveles pogácsa"
+        ]
     }
 ]

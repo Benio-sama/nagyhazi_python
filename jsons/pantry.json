@@ -2,19 +2,721 @@
     {
         "id": 0,
         "name": "liszt",
+        "quantity": 9.6,
+        "unit": "kg"
+    },
+    {
+        "id": 1,
+        "name": "búzadara",
+        "quantity": 0.96,
+        "unit": "kg"
+    },
+    {
+        "id": 2,
+        "name": "rétesliszt",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 3,
+        "name": "cukor",
+        "quantity": 5.0,
+        "unit": "kg"
+    },
+    {
+        "id": 4,
+        "name": "porcukor",
+        "quantity": 0.7,
+        "unit": "kg"
+    },
+    {
+        "id": 5,
+        "name": "barna cukor",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 6,
+        "name": "só",
+        "quantity": 0.96,
+        "unit": "kg"
+    },
+    {
+        "id": 7,
+        "name": "bors",
+        "quantity": 50.0,
+        "unit": "g"
+    },
+    {
+        "id": 8,
+        "name": "édes pirospaprika",
+        "quantity": 100.0,
+        "unit": "g"
+    },
+    {
+        "id": 9,
+        "name": "csípős pirospaprika",
+        "quantity": 50.0,
+        "unit": "g"
+    },
+    {
+        "id": 10,
+        "name": "fahéj",
+        "quantity": 40.0,
+        "unit": "g"
+    },
+    {
+        "id": 11,
+        "name": "sütőpor",
+        "quantity": 10.0,
+        "unit": "db"
+    },
+    {
+        "id": 12,
+        "name": "szódabikarbóna",
+        "quantity": 97.5,
+        "unit": "g"
+    },
+    {
+        "id": 13,
+        "name": "vaníliás cukor",
+        "quantity": 6.0,
+        "unit": "db"
+    },
+    {
+        "id": 14,
+        "name": "szárított élesztő",
+        "quantity": 3.0,
+        "unit": "db"
+    },
+    {
+        "id": 15,
+        "name": "rizs",
+        "quantity": 2.0,
+        "unit": "kg"
+    },
+    {
+        "id": 16,
+        "name": "bulgur",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 17,
+        "name": "kuszkusz",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 18,
+        "name": "spagetti tészta",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 19,
+        "name": "szarvacska tészta",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 20,
+        "name": "penne tészta",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 21,
+        "name": "napraforgó olaj",
+        "quantity": 2.0,
+        "unit": "l"
+    },
+    {
+        "id": 22,
+        "name": "olívaolaj",
+        "quantity": 0.66,
+        "unit": "l"
+    },
+    {
+        "id": 23,
+        "name": "ecet 10%",
+        "quantity": 1.0,
+        "unit": "l"
+    },
+    {
+        "id": 24,
+        "name": "balzsamecet",
+        "quantity": 250.0,
+        "unit": "ml"
+    },
+    {
+        "id": 25,
+        "name": "méz",
+        "quantity": 0.5,
+        "unit": "kg"
+    },
+    {
+        "id": 26,
+        "name": "kakaópor",
+        "quantity": 100.0,
+        "unit": "g"
+    },
+    {
+        "id": 27,
+        "name": "kávé",
+        "quantity": 250.0,
+        "unit": "g"
+    },
+    {
+        "id": 28,
+        "name": "tea filteres",
+        "quantity": 20.0,
+        "unit": "db"
+    },
+    {
+        "id": 29,
+        "name": "barack lekvár",
+        "quantity": 350.0,
+        "unit": "g"
+    },
+    {
+        "id": 30,
+        "name": "szilva lekvár",
+        "quantity": 350.0,
+        "unit": "g"
+    },
+    {
+        "id": 31,
+        "name": "paradicsompüré",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 32,
+        "name": "paradicsomszósz",
+        "quantity": 700.0,
+        "unit": "g"
+    },
+    {
+        "id": 33,
+        "name": "mustár",
+        "quantity": 450.0,
+        "unit": "g"
+    },
+    {
+        "id": 34,
+        "name": "majonéz",
+        "quantity": 363.0,
+        "unit": "g"
+    },
+    {
+        "id": 35,
+        "name": "ketchup",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 36,
+        "name": "szójaszósz",
+        "quantity": 200.0,
+        "unit": "ml"
+    },
+    {
+        "id": 37,
+        "name": "chili szósz",
+        "quantity": 200.0,
+        "unit": "ml"
+    },
+    {
+        "id": 38,
+        "name": "kukorica konzerv",
+        "quantity": 2.0,
+        "unit": "db"
+    },
+    {
+        "id": 39,
+        "name": "bab konzerv",
+        "quantity": 2.0,
+        "unit": "db"
+    },
+    {
+        "id": 40,
+        "name": "zöldborsó konzerv",
+        "quantity": 2.0,
+        "unit": "db"
+    },
+    {
+        "id": 41,
+        "name": "paradicsom konzerv",
+        "quantity": 2.0,
+        "unit": "db"
+    },
+    {
+        "id": 42,
+        "name": "tonhal konzerv",
+        "quantity": 2.0,
+        "unit": "db"
+    },
+    {
+        "id": 43,
+        "name": "szardínia",
+        "quantity": 2.0,
+        "unit": "db"
+    },
+    {
+        "id": 44,
+        "name": "csicseriborsó konzerv",
+        "quantity": 1.0,
+        "unit": "db"
+    },
+    {
+        "id": 45,
+        "name": "lencse",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 46,
+        "name": "dió",
+        "quantity": 200.0,
+        "unit": "g"
+    },
+    {
+        "id": 47,
+        "name": "mandula",
+        "quantity": 150.0,
+        "unit": "g"
+    },
+    {
+        "id": 48,
+        "name": "mogyoró",
+        "quantity": 150.0,
+        "unit": "g"
+    },
+    {
+        "id": 49,
+        "name": "mazsola",
+        "quantity": 150.0,
+        "unit": "g"
+    },
+    {
+        "id": 50,
+        "name": "tojás",
+        "quantity": 12.0,
+        "unit": "db"
+    },
+    {
+        "id": 51,
+        "name": "tej",
+        "quantity": 14.2,
+        "unit": "l"
+    },
+    {
+        "id": 52,
+        "name": "natúr joghurt",
+        "quantity": 4.0,
+        "unit": "db"
+    },
+    {
+        "id": 53,
+        "name": "tejföl",
+        "quantity": 100.0,
+        "unit": "g"
+    },
+    {
+        "id": 54,
+        "name": "tejszín",
+        "quantity": 500.0,
+        "unit": "ml"
+    },
+    {
+        "id": 55,
+        "name": "vaj",
         "quantity": 0.0,
         "unit": "g"
     },
     {
-        "id": 1,
-        "name": "tojás",
-        "quantity": 0.0,
+        "id": 56,
+        "name": "margarin",
+        "quantity": 250.0,
+        "unit": "g"
+    },
+    {
+        "id": 57,
+        "name": "trappista sajt",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 58,
+        "name": "edami sajt",
+        "quantity": 0.5,
+        "unit": "kg"
+    },
+    {
+        "id": 59,
+        "name": "feta",
+        "quantity": 200.0,
+        "unit": "g"
+    },
+    {
+        "id": 60,
+        "name": "túró",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 61,
+        "name": "csirkemell",
+        "quantity": 1.5,
+        "unit": "kg"
+    },
+    {
+        "id": 62,
+        "name": "csirkecomb",
+        "quantity": 1.5,
+        "unit": "kg"
+    },
+    {
+        "id": 63,
+        "name": "sertés tarja",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 64,
+        "name": "sertés lapocka",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 65,
+        "name": "darált hús",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 66,
+        "name": "virsli",
+        "quantity": 300.0,
+        "unit": "g"
+    },
+    {
+        "id": 67,
+        "name": "kolbász",
+        "quantity": 400.0,
+        "unit": "g"
+    },
+    {
+        "id": 68,
+        "name": "sonka",
+        "quantity": 300.0,
+        "unit": "g"
+    },
+    {
+        "id": 69,
+        "name": "szalonna",
+        "quantity": 300.0,
+        "unit": "g"
+    },
+    {
+        "id": 70,
+        "name": "sertészsír",
+        "quantity": 144.8,
+        "unit": "g"
+    },
+    {
+        "id": 71,
+        "name": "burgonya",
+        "quantity": 4.0,
+        "unit": "kg"
+    },
+    {
+        "id": 72,
+        "name": "vöröshagyma",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 73,
+        "name": "fokhagyma",
+        "quantity": 19.0,
+        "unit": "gerezd"
+    },
+    {
+        "id": 74,
+        "name": "répa",
+        "quantity": 6.0,
         "unit": "db"
     },
     {
-        "id": 2,
-        "name": "tej",
+        "id": 75,
+        "name": "fehérrépa",
+        "quantity": 3.0,
+        "unit": "db"
+    },
+    {
+        "id": 76,
+        "name": "zeller",
+        "quantity": 1.5,
+        "unit": "szál"
+    },
+    {
+        "id": 77,
+        "name": "karalábé",
+        "quantity": 4.0,
+        "unit": "db"
+    },
+    {
+        "id": 78,
+        "name": "káposzta",
+        "quantity": 1.0,
+        "unit": "db"
+    },
+    {
+        "id": 79,
+        "name": "paprika",
+        "quantity": 3.0,
+        "unit": "db"
+    },
+    {
+        "id": 80,
+        "name": "paradicsom",
+        "quantity": 4.0,
+        "unit": "db"
+    },
+    {
+        "id": 81,
+        "name": "uborka",
+        "quantity": 2.0,
+        "unit": "db"
+    },
+    {
+        "id": 82,
+        "name": "citrom",
+        "quantity": 3.0,
+        "unit": "db"
+    },
+    {
+        "id": 83,
+        "name": "alma",
+        "quantity": 6.0,
+        "unit": "db"
+    },
+    {
+        "id": 84,
+        "name": "banán",
+        "quantity": 6.0,
+        "unit": "db"
+    },
+    {
+        "id": 85,
+        "name": "fagyasztott borsó",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 86,
+        "name": "fagyasztott kukorica",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 87,
+        "name": "fagyasztott vegyes zöldség",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 88,
+        "name": "fagyasztott pizza",
+        "quantity": 2.0,
+        "unit": "db"
+    },
+    {
+        "id": 89,
+        "name": "fagyasztott csirkemell",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 90,
+        "name": "fagyasztott hekk",
+        "quantity": 1.0,
+        "unit": "kg"
+    },
+    {
+        "id": 91,
+        "name": "kenyér",
         "quantity": 0.0,
+        "unit": "kg"
+    },
+    {
+        "id": 92,
+        "name": "zsemle",
+        "quantity": 4.0,
+        "unit": "db"
+    },
+    {
+        "id": 93,
+        "name": "kifli",
+        "quantity": 4.0,
+        "unit": "db"
+    },
+    {
+        "id": 94,
+        "name": "kakaós csiga",
+        "quantity": 2.0,
+        "unit": "db"
+    },
+    {
+        "id": 95,
+        "name": "vaníliás karika",
+        "quantity": 200.0,
+        "unit": "g"
+    },
+    {
+        "id": 96,
+        "name": "keksz",
+        "quantity": 200.0,
+        "unit": "g"
+    },
+    {
+        "id": 97,
+        "name": "ét csokoládé",
+        "quantity": 100.0,
+        "unit": "g"
+    },
+    {
+        "id": 98,
+        "name": "tej csokoládé",
+        "quantity": 100.0,
+        "unit": "g"
+    },
+    {
+        "id": 99,
+        "name": "müzli",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 100,
+        "name": "ásványvíz",
+        "quantity": 6.0,
+        "unit": "l"
+    },
+    {
+        "id": 101,
+        "name": "szénsavas víz",
+        "quantity": 3.0,
+        "unit": "l"
+    },
+    {
+        "id": 102,
+        "name": "gyümölcslé",
+        "quantity": 2.0,
+        "unit": "l"
+    },
+    {
+        "id": 103,
+        "name": "cola",
+        "quantity": 1.5,
+        "unit": "l"
+    },
+    {
+        "id": 104,
+        "name": "grill fűszerkeverék",
+        "quantity": 50.0,
+        "unit": "g"
+    },
+    {
+        "id": 105,
+        "name": "oregánó",
+        "quantity": 20.0,
+        "unit": "g"
+    },
+    {
+        "id": 106,
+        "name": "bazsalikom",
+        "quantity": 20.0,
+        "unit": "g"
+    },
+    {
+        "id": 107,
+        "name": "majoranna",
+        "quantity": 20.0,
+        "unit": "g"
+    },
+    {
+        "id": 108,
+        "name": "kakukkfű",
+        "quantity": 16.5,
+        "unit": "g"
+    },
+    {
+        "id": 109,
+        "name": "rozmaring",
+        "quantity": 20.0,
+        "unit": "g"
+    },
+    {
+        "id": 110,
+        "name": "zsemlemorzsa",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 111,
+        "name": "panírmorzsa",
+        "quantity": 400.0,
+        "unit": "g"
+    },
+    {
+        "id": 112,
+        "name": "kukoricapehely",
+        "quantity": 250.0,
+        "unit": "g"
+    },
+    {
+        "id": 113,
+        "name": "kókuszreszelék",
+        "quantity": 100.0,
+        "unit": "g"
+    },
+    {
+        "id": 114,
+        "name": "tejpor",
+        "quantity": 500.0,
+        "unit": "g"
+    },
+    {
+        "id": 115,
+        "name": "kondenzált tej",
+        "quantity": 250.0,
+        "unit": "g"
+    },
+    {
+        "id": 116,
+        "name": "étolaj spray",
+        "quantity": 200.0,
         "unit": "ml"
+    },
+    {
+        "id": 117,
+        "name": "instant leves",
+        "quantity": 3.0,
+        "unit": "db"
+    },
+    {
+        "id": 118,
+        "name": "kakaó italpor",
+        "quantity": 800.0,
+        "unit": "g"
+    },
+    {
+        "id": 119,
+        "name": "pudingpor",
+        "quantity": 4.0,
+        "unit": "db"
     }
 ]

@@ -15,9 +15,10 @@ class Pantry:
 
     def remove_quantity(self, amount):
         if amount > self.quantity:
-            print("Nincs elég mennyiség a kamrában.")
+            print("Nincs elég mennyiség a kamrában, 0-ig csökkentve.")
+            self.quantity = 0
         else:
-            self.quantity -= amount
+            self.quantity = round(self.quantity - amount, 2)
     
     def _setname(self, new_name: str):
         self.name = new_name

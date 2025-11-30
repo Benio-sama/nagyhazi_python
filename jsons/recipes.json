@@ -14,7 +14,7 @@
             {
                 "id": 1,
                 "name": "tojás",
-                "quantity": 2.0,
+                "quantity": 2,
                 "unit": "db"
             },
             {
@@ -631,7 +631,7 @@
         ]
     },
     {
-        "id": 7,
+        "id": 8,
         "name": "A sajtos leveles pogácsa",
         "category": "sütemény",
         "servings": 10,
@@ -711,7 +711,7 @@
         ]
     },
     {
-        "id": 8,
+        "id": 9,
         "name": "Asszony dicséret - Diós-lekváros linzersüti",
         "category": "sütemény",
         "servings": 6,
@@ -782,7 +782,7 @@
         ]
     },
     {
-        "id": 9,
+        "id": 10,
         "name": "A tökéletes marhapörkölt",
         "category": "főétel",
         "servings": 4,
@@ -855,6 +855,87 @@
             "Ekkor újabb 100 ml víz és újabb zsírjára pirítás következik. Ezt még egyszer megismételjük, majd felöntjük 500 ml vízzel, és közepes lángon addig főzzük, amíg a hús megpuhul.",
             "Közben gyakran kevergetjük, nehogy leégjen, és ha szükséges, pótoljuk alatta a folyadékot. Amikor a hús már majdnem teljesen puha, hozzáöntjük a bort is, felforraljuk, és még 30 percig főzzük alacsony lángon.",
             "Én nokedlit tálaltam mellé, mert szerintem a pörköltnek az elengedhetetlen kísérője, de mindenki kedvére variálhatja a köretet. Egy biztos, hogy valamilyen savanyúságot mindenképp érdemes mellé adni."
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Paprikás krumpli",
+        "category": "főétel",
+        "servings": 4,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "burgonya",
+                "quantity": 1.0,
+                "unit": "kg"
+            },
+            {
+                "id": 1,
+                "name": "vöröshagyma",
+                "quantity": 1.0,
+                "unit": "fej"
+            },
+            {
+                "id": 2,
+                "name": "fokhagyma",
+                "quantity": 3.0,
+                "unit": "gerezd"
+            },
+            {
+                "id": 3,
+                "name": "kenyérszalonna",
+                "quantity": 50.0,
+                "unit": "g"
+            },
+            {
+                "id": 4,
+                "name": "sertészsír",
+                "quantity": 2.0,
+                "unit": "ek"
+            },
+            {
+                "id": 5,
+                "name": "gyulai kolbász",
+                "quantity": 200.0,
+                "unit": "g"
+            },
+            {
+                "id": 6,
+                "name": "virsli",
+                "quantity": 100.0,
+                "unit": "g"
+            },
+            {
+                "id": 7,
+                "name": "fűszerpaprika",
+                "quantity": 3.0,
+                "unit": "ek"
+            },
+            {
+                "id": 8,
+                "name": "víz",
+                "quantity": 1.0,
+                "unit": "l"
+            },
+            {
+                "id": 9,
+                "name": "kenyér",
+                "quantity": 1.0,
+                "unit": "kg"
+            },
+            {
+                "id": 10,
+                "name": "vegyes savanyúság",
+                "quantity": 30.0,
+                "unit": "dkg"
+            }
+        ],
+        "instructions": [
+            "A hozzávalókat előkészítjük. A burgonyákat megpucoljuk és „csonka\" alakúra szeleteljük, a hagymákat finomra aprítjuk, a kolbászt felkarikázzuk, a virslit falatnyi darabokra vágjuk, a szalonnát pedig felkockázzuk.",
+            "Egy nagy lábasban a zsírt felhevítjük, és zsírjára pirítjuk benne a felkockázott szalonnát, majd ráborítjuk a hagymát, és üvegesre pároljuk rajta. A lábost kicsit félrehúzzuk a tűzről, és meghintjük a fűszerpaprikával.",
+            "Jól elkeverjük, majd hozzáadjuk a fokhagymát és krumplit. Átkeverjük az egészet, és felöntjük annyi langyos vízzel, hogy pont ellepje a lábas tartalmát. Ízlés szerint sózzuk, borsozzuk. Ezt követően fedő alatt puhára főzzük.",
+            "Miután kész, pár szem krumplit szétnyomkodunk villával, hogy sűrűbb legyen az étel állaga. Hozzászórjuk a felkarikázott kolbászt és virslit, majd hagyjuk még jó pár percig rotyogni.",
+            "Friss kenyérrel és tetszőleges savanyúsággal tálaljuk."
         ]
     }
 ]

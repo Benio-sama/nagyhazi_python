@@ -1,6 +1,6 @@
 import time
 from console import console_main
-from functions import back_to_menu, clear_console, import_all
+from functions import clear_console, import_all, import_from_files
 from recipes import read_recipe_from_file
 from menu import read_menu_from_file
 from pantry import read_pantry_from_file
@@ -15,10 +15,7 @@ def main():
         print("2. Exportált adatok (Figyelem: az exportált adatok felülírják a helyi adatokat!)")
         choice = input("Válassz egy opciót: ")
         if choice == '1':
-            recipes = read_recipe_from_file('jsons/recipes.json')
-            menus = read_menu_from_file(recipes, 'jsons/menu.json')
-            pantry = read_pantry_from_file('jsons/pantry.json')
-            shopping_list = read_shopping_list_from_file('jsons/shopping_list.json')
+            recipes, menus, pantry, shopping_list = import_from_files()
         elif choice == '2':
             recipes = read_recipe_from_file(data[0])
             menus = read_menu_from_file(recipes, data[1])
@@ -27,10 +24,7 @@ def main():
         else:
             main()
     else:
-        recipes = read_recipe_from_file('jsons/recipes.json')
-        menus = read_menu_from_file(recipes, 'jsons/menu.json')
-        pantry = read_pantry_from_file('jsons/pantry.json')
-        shopping_list = read_shopping_list_from_file('jsons/shopping_list.json')
+        recipes, menus, pantry, shopping_list = import_from_files()
     print("Üdvözöllek a Recept és menütervező, bevásárlólista kezelő alkalmazásban!")
     time.sleep(2)
     console_main(recipes, menus, pantry, shopping_list)

@@ -10,7 +10,7 @@ def menu_menu(recipes, menus, pantry, shopping_list):
     print("2. Napi menü törlése")
     print("3. Heti menü törlése")
     print("4. Menü listázása")
-    print("5. Napi menü listázása")
+    print("5. A mai menü listázása")
     print("0. Vissza a főmenübe")
 
     choice = input("Válassz egy opciót: ")
@@ -88,10 +88,20 @@ def remove_recipe_from_day(recipes, menus, pantry, shopping_list):
             else:
                 for r in i.recipes:
                     print(r.id+1, r.name)
-                r_id = int(input("Add meg a törlendő recept számát: ")) -1
-                confirm = input(f"Biztosan törlöd a {r_id}. receptet? (i/n): ")
+                r_ids = input("Add meg a törlendő recept számát (ha többet törölnél, szóközzel elválasztva): ").split(" ")
+                exit_if_0(r_ids, menu_menu, recipes, menus, pantry, shopping_list)
+                delete = []
+                for rid in r_ids:
+                    if rid.isdigit():
+                        rid_int = int(rid)-1
+                        if 0 <= rid_int < len(recipes):
+                            delete.append(recipes[rid_int])
+                        else:
+                            print(f"A {rid} számú recept nem létezik. Figyelmen kívül hagyva.")
+                confirm = input(f"Biztosan törlöd a " + ", ".join([r.name for r in delete]) + " receptet? (i/n): ")
                 if confirm.lower() == 'i':
-                    i.remove_meal(recipes[r_id])
+                    for r in delete:
+                        i.remove_meal(r)
                     print("Sikeres törlés.")
                     back_to_menu(menu_menu, recipes, menus, pantry, shopping_list)
                 else:
