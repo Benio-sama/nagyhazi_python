@@ -13,20 +13,33 @@ def main():
         print("Talált exportált adatfájl. Melyik forrást szeretnéd használni?")
         print("1. Helyi adatok")
         print("2. Exportált adatok (Figyelem: az exportált adatok felülírják a helyi adatokat!)")
-        choice = input("Válassz egy opciót: ")
-        if choice == '1':
-            recipes, menus, pantry, shopping_list = import_from_files()
-        elif choice == '2':
-            recipes = read_recipe_from_file(data[0])
-            menus = read_menu_from_file(recipes, data[1])
-            pantry = read_pantry_from_file(data[2])
-            shopping_list = read_shopping_list_from_file(data[3])
-        else:
-            main()
+        print("0. Kilépés")
+        is_not_in_choices = False
+        while True:
+            choice = input("Válassz egy opciót: " if not is_not_in_choices else "Érvénytelen választás. Kérlek, válassz újra: ")
+            if choice == '0':
+                break
+            elif choice == '1':
+                recipes, menus, pantry, shopping_list = import_from_files()
+                print("Üdvözöllek a Recept és menütervező, bevásárlólista kezelő alkalmazásban!")
+                time.sleep(1.5)
+                console_main(recipes, menus, pantry, shopping_list)
+            elif choice == '2':
+                recipes = read_recipe_from_file(data[0])
+                menus = read_menu_from_file(recipes, data[1])
+                pantry = read_pantry_from_file(data[2])
+                shopping_list = read_shopping_list_from_file(data[3])
+                print("Üdvözöllek a Recept és menütervező, bevásárlólista kezelő alkalmazásban!")
+                time.sleep(1.5)
+                console_main(recipes, menus, pantry, shopping_list)
+            else:
+                is_not_in_choices = True
+                continue
     else:
         recipes, menus, pantry, shopping_list = import_from_files()
-    print("Üdvözöllek a Recept és menütervező, bevásárlólista kezelő alkalmazásban!")
-    time.sleep(2)
-    console_main(recipes, menus, pantry, shopping_list)
+        print("Üdvözöllek a Recept és menütervező, bevásárlólista kezelő alkalmazásban!")
+        time.sleep(1.5)
+        console_main(recipes, menus, pantry, shopping_list)
+    
 
 main()

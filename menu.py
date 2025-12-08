@@ -19,9 +19,6 @@ class Menu:
     def remove_meal(self, recipe: Recipe):
         if recipe in self.recipes:
             self.recipes.remove(recipe)
-
-    def get_meals(self):
-        return self.recipes
     
     def to_dict(self):
         return {

@@ -84,19 +84,6 @@ class Recipe:
 
     def remove_ingredient(self, id: int):
         self.ingredients = [ing for ing in self.ingredients if ing.id != id]
-
-    def edit_ingredient(self, ingredient_name: str, new_quantity: float, new_unit: str):
-        for ing in self.ingredients:
-            if ing.name == ingredient_name:
-                ing.quantity = new_quantity
-                ing.unit = new_unit
-                return
-
-    def get_ingredients(self):
-            return [ing.name for ing in self.ingredients]
-    
-    def get_instructions(self):
-        return self.instructions
     
     def add_instruction(self, instruction: str):
         self.instructions.append(instruction)

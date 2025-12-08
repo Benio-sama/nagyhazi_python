@@ -1,23 +1,9 @@
 import math
 import os
-import time
 import json
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
-
-def exit_if_0(value, menu, *args):
-    if (isinstance(value, list) and '0' in value) or (isinstance(value, float) and value == 0) or value == '0' or value == 0:
-        print("Vissza a menübe.")
-        time.sleep(1)
-        clear_console()
-        menu(*args)
-    return 
-
-def back_to_menu(menu, *args):
-    time.sleep(1)
-    clear_console()
-    menu(*args)
 
 def conversion(item, new_unit: str):
     conversions = {
@@ -239,19 +225,6 @@ def conversion(item, new_unit: str):
     else:
         print(f"Nincs konverzió {item.unit} és {new_unit} között.")
         return False
-
-        
-def modify_body(headerfunc, s, value, setter, menufunc, *args):
-    clear_console()
-    headerfunc(s, value)
-    new_value = input(f"Új {s.lower()}: ")
-    exit_if_0(new_value, menufunc, *args)
-    if new_value:
-        setter(int(new_value) if s == "Adag" else new_value)
-        print("Sikeres módosítás.")
-        back_to_menu(menufunc, *args)
-    else:
-        menufunc()
 
 def modify_header(name, value):
     print(f"{name} módosítása")
