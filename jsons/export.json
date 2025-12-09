@@ -23,6 +23,12 @@
                     "name": "tej",
                     "quantity": 300.0,
                     "unit": "ml"
+                },
+                {
+                    "id": 3,
+                    "name": "nutella",
+                    "quantity": null,
+                    "unit": "ízlés szerint"
                 }
             ],
             "instructions": [
@@ -938,6 +944,63 @@
                 "Miután kész, pár szem krumplit szétnyomkodunk villával, hogy sűrűbb legyen az étel állaga. Hozzászórjuk a felkarikázott kolbászt és virslit, majd hagyjuk még jó pár percig rotyogni.",
                 "Friss kenyérrel és tetszőleges savanyúsággal tálaljuk."
             ]
+        },
+        {
+            "id": 12,
+            "name": "Mézeskalács",
+            "category": "desszert",
+            "servings": 6,
+            "ingredients": [
+                {
+                    "id": 0,
+                    "name": "liszt",
+                    "quantity": 100.0,
+                    "unit": "dkg"
+                },
+                {
+                    "id": 1,
+                    "name": "méz",
+                    "quantity": 3.0,
+                    "unit": "dl"
+                },
+                {
+                    "id": 2,
+                    "name": "porcukor",
+                    "quantity": 30.0,
+                    "unit": "dkg"
+                },
+                {
+                    "id": 3,
+                    "name": "mézeskalács fűszer",
+                    "quantity": 4.0,
+                    "unit": "tk"
+                },
+                {
+                    "id": 4,
+                    "name": "szódabikarbóna",
+                    "quantity": 4.0,
+                    "unit": "kk"
+                },
+                {
+                    "id": 5,
+                    "name": "tojás",
+                    "quantity": 4.0,
+                    "unit": "db"
+                },
+                {
+                    "id": 6,
+                    "name": "margarin",
+                    "quantity": 30.0,
+                    "unit": "dkg"
+                }
+            ],
+            "instructions": [
+                "Minden hozzávalót összekeverünk.",
+                "Pihentetjük hűvösben fél - 1 órát.",
+                "3 - 4 mm vastagra nyújtuk majd kiszaggatjuk formákkal.",
+                "Sütőpapírral bélelt tepsi tegyük őket kis távolságra egymástól, ne érjenek össze, egy minimálisan meg fognak nőni.",
+                "180 fokon előmelegített sütőben 8-10 percig süssük."
+            ]
         }
     ],
     "menus": [
@@ -953,8 +1016,9 @@
             "id": 1,
             "day": "Kedd",
             "recipes": [
-                "Padlizsánkrém egyszerűen",
-                "Karfiolleves habkönnyű daragombóccal"
+                "Karfiolleves habkönnyű daragombóccal",
+                "Palacsinta",
+                "A sajtos leveles pogácsa"
             ]
         },
         {
@@ -1721,211 +1785,319 @@
     ],
     "shopping_list": [
         {
-            "id": 28,
+            "id": 52,
             "name": "beáztatott kenyér",
             "quantity": 2.0,
             "unit": "szelet"
         },
         {
-            "id": 32,
+            "id": 67,
+            "name": "burgonya",
+            "quantity": 1.0,
+            "unit": "kg"
+        },
+        {
+            "id": 59,
             "name": "citrom (leve és reszelt héja)",
             "quantity": 1.0,
             "unit": "db"
         },
         {
-            "id": 16,
+            "id": 28,
             "name": "csirkefarhát",
             "quantity": 400.0,
             "unit": "g"
         },
         {
-            "id": 11,
+            "id": 20,
             "name": "csípős gulyáskrém",
             "quantity": 1.0,
             "unit": "ek"
         },
         {
-            "id": 35,
+            "id": 62,
             "name": "darált dió",
             "quantity": 25.0,
             "unit": "dkg"
         },
         {
-            "id": 26,
+            "id": 22,
+            "name": "fehérrépa",
+            "quantity": 1.0,
+            "unit": "db"
+        },
+        {
+            "id": 48,
             "name": "feketeerdő sonka",
             "quantity": 50.0,
             "unit": "g"
         },
         {
-            "id": 19,
+            "id": 36,
             "name": "finomliszt",
             "quantity": 1500.0,
             "unit": "g"
         },
         {
-            "id": 22,
+            "id": 12,
+            "name": "fokhagyma",
+            "quantity": 11.0,
+            "unit": "gerezd"
+        },
+        {
+            "id": 44,
             "name": "friss élesztő",
             "quantity": 60.0,
             "unit": "g"
         },
         {
-            "id": 3,
+            "id": 6,
             "name": "fűszerpaprika",
             "quantity": 7.0,
             "unit": "ek"
         },
         {
-            "id": 38,
+            "id": 71,
             "name": "gyulai kolbász",
             "quantity": 200.0,
             "unit": "g"
         },
         {
-            "id": 24,
+            "id": 55,
+            "name": "kakukkfű",
+            "quantity": 3.5,
+            "unit": "g"
+        },
+        {
+            "id": 46,
             "name": "kandírozott tőzegáfonya",
             "quantity": 50.0,
             "unit": "g"
         },
         {
-            "id": 13,
+            "id": 30,
+            "name": "karalábé",
+            "quantity": 1.0,
+            "unit": "db"
+        },
+        {
+            "id": 23,
             "name": "karfiol",
             "quantity": 600.0,
             "unit": "g"
         },
         {
-            "id": 37,
+            "id": 75,
+            "name": "kenyér",
+            "quantity": 1.0,
+            "unit": "kg"
+        },
+        {
+            "id": 69,
             "name": "kenyérszalonna",
             "quantity": 50.0,
             "unit": "g"
         },
         {
-            "id": 2,
+            "id": 13,
+            "name": "majonéz",
+            "quantity": 57.0,
+            "unit": "g"
+        },
+        {
+            "id": 5,
             "name": "marhanyak",
             "quantity": 1.2,
             "unit": "kg"
         },
         {
-            "id": 25,
+            "id": 47,
             "name": "natúr dióbél",
             "quantity": 50.0,
             "unit": "g"
         },
         {
-            "id": 10,
+            "id": 35,
+            "name": "nutella",
+            "quantity": null,
+            "unit": "ízlés szerint"
+        },
+        {
+            "id": 18,
             "name": "olaj",
             "quantity": 1.0,
             "unit": "ek"
         },
         {
-            "id": 7,
+            "id": 14,
+            "name": "olívaolaj",
+            "quantity": 0.09,
+            "unit": "l"
+        },
+        {
+            "id": 11,
             "name": "padlizsán",
             "quantity": 4.0,
             "unit": "db"
         },
         {
-            "id": 30,
+            "id": 24,
+            "name": "paprika",
+            "quantity": 2.0,
+            "unit": "db"
+        },
+        {
+            "id": 9,
+            "name": "paradicsom",
+            "quantity": 2.0,
+            "unit": "db"
+        },
+        {
+            "id": 54,
             "name": "petrezselyem",
             "quantity": 1.0,
             "unit": "ek"
         },
         {
-            "id": 12,
+            "id": 21,
             "name": "petrezselyemzöld",
             "quantity": null,
             "unit": "ízlés szerint"
         },
         {
-            "id": 23,
+            "id": 58,
+            "name": "porcukor",
+            "quantity": 0.3,
+            "unit": "kg"
+        },
+        {
+            "id": 45,
             "name": "pulykamell",
             "quantity": 1000.0,
             "unit": "g"
         },
         {
-            "id": 0,
+            "id": 2,
             "name": "sajt",
             "quantity": 460.0,
             "unit": "g"
         },
         {
-            "id": 29,
+            "id": 3,
+            "name": "sertészsír",
+            "quantity": 355.2,
+            "unit": "g"
+        },
+        {
+            "id": 53,
             "name": "snidling",
             "quantity": 1.0,
             "unit": "ek"
         },
         {
-            "id": 6,
+            "id": 10,
             "name": "száraz fehérbor",
             "quantity": 100.0,
             "unit": "ml"
         },
         {
-            "id": 34,
+            "id": 61,
             "name": "sárgabaracklekvár",
             "quantity": 5.0,
             "unit": "dkg"
         },
         {
-            "id": 18,
+            "id": 32,
             "name": "sárgarépa",
             "quantity": 2.0,
             "unit": "szál"
         },
         {
-            "id": 9,
+            "id": 1,
+            "name": "tej",
+            "quantity": 1.1,
+            "unit": "l"
+        },
+        {
+            "id": 41,
+            "name": "tejföl",
+            "quantity": 350.0,
+            "unit": "g"
+        },
+        {
+            "id": 17,
             "name": "teljes kiőrlésű liszt",
             "quantity": 2.0,
             "unit": "ek"
         },
         {
-            "id": 36,
+            "id": 0,
+            "name": "tojás",
+            "quantity": 14.0,
+            "unit": "db"
+        },
+        {
+            "id": 63,
             "name": "tojásfehérje",
             "quantity": 5.0,
             "unit": "db"
         },
         {
-            "id": 20,
+            "id": 39,
             "name": "tojássárgája",
             "quantity": 12.0,
             "unit": "db"
         },
         {
-            "id": 1,
+            "id": 4,
             "name": "tölteni való paprika",
             "quantity": 2.0,
             "unit": "db"
         },
         {
-            "id": 45,
+            "id": 38,
             "name": "vaj",
-            "quantity": 100.0,
+            "quantity": 350.0,
             "unit": "g"
         },
         {
-            "id": 41,
+            "id": 76,
             "name": "vegyes savanyúság",
             "quantity": 30.0,
             "unit": "dkg"
         },
         {
-            "id": 8,
-            "name": "víz",
-            "quantity": 202.5,
-            "unit": "ek"
+            "id": 72,
+            "name": "virsli",
+            "quantity": 100.0,
+            "unit": "g"
         },
         {
-            "id": 17,
+            "id": 16,
+            "name": "víz",
+            "quantity": 30.5,
+            "unit": "dl"
+        },
+        {
+            "id": 15,
+            "name": "zeller",
+            "quantity": 3.5,
+            "unit": "szál"
+        },
+        {
+            "id": 29,
             "name": "zöldség zöld",
             "quantity": 1.0,
             "unit": "csokor"
         },
         {
-            "id": 14,
+            "id": 26,
             "name": "őrölt bors",
             "quantity": null,
             "unit": "ízlés szerint"
         },
         {
-            "id": 5,
+            "id": 8,
             "name": "őrölt kömény",
             "quantity": 1.0,
             "unit": "tk"

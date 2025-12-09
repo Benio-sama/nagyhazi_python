@@ -275,25 +275,12 @@ def import_all(filename):
     with open(f"jsons/{filename}", "rt", encoding="utf-8") as f:
         try:
             data = json.load(f)
+            return (
+                data.get("recipes", []),
+                data.get("menus", []),
+                data.get("pantry", []),
+                data.get("shopping_list", [])
+            )
         except json.JSONDecodeError:
             data = {}
-
-    return (
-        data.get("recipes", []),
-        data.get("menus", []),
-        data.get("pantry", []),
-        data.get("shopping_list", [])
-    )
-
-def import_from_files():
-    from menu import read_menu_from_file
-    from pantry import read_pantry_from_file
-    from recipes import read_recipe_from_file
-    from shopping_list import read_shopping_list_from_file
-    
-    recipes = read_recipe_from_file('jsons/recipes.json')
-    menus = read_menu_from_file(recipes, 'jsons/menu.json')
-    pantry = read_pantry_from_file('jsons/pantry.json')
-    shopping_list = read_shopping_list_from_file('jsons/shopping_list.json')
-
-    return recipes, menus, pantry, shopping_list
+            return data

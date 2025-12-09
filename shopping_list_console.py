@@ -4,11 +4,10 @@ import time
 
 def shopping_list_menu(s_choice, menus, pantry, shopping_list):
 
-    save_to_json(shopping_list.items, 'shopping_list.json')
     if s_choice == '1':
         clear_console()
         print("Bevásárlólista generálása/frissítése...")
-        new_shopping_list = generate_shopping_list(menus, pantry, shopping_list)
+        new_shopping_list = generate_shopping_list(menus, pantry)
         time.sleep(1)
         print("Bevásárlólista optimalizálása...")
         shopping_list = shopping_list_optimize(new_shopping_list, shopping_list)
@@ -31,6 +30,7 @@ def shopping_list_menu(s_choice, menus, pantry, shopping_list):
     elif s_choice == '7':
         clear_console()
         shopping_list = delete_shopping_list_item(shopping_list)
+    return shopping_list
 
 def generate_shopping_list(menus, pantry):
     new_shopping_list = ShoppingList()
@@ -172,18 +172,26 @@ def add_shopping_list_item(shopping_list):
         clear_console()
         return shopping_list
     quantity_input = input("Add meg a mennyiséget: ")
-    while not quantity_input.isdigit():
-        print("Kérlek számot adj meg!")
-        quantity_input = input("Add meg a mennyiséget: ")
-    quantity = float(quantity_input)
-    if quantity == 0:
+    if quantity_input == '0':
         clear_console()
         return shopping_list
+    while True:
+        try:
+            float_quantity = float(quantity_input)
+            break
+        except ValueError:
+            print("Kérlek számot adj meg!")
+            quantity_input = input("Add meg a mennyiséget: ")
+    quantity = float_quantity
     unit = input("Add meg a mértékegységet: ")
     if unit == '0':
         clear_console()
         return shopping_list
-    new_item = ShoppingList_Item(len(shopping_list.items), name, quantity, unit)
+    max_id = shopping_list.items[0].id if len(shopping_list.items) > 0 else 0
+    for item in shopping_list.items:
+        if item.id > max_id:
+            max_id = item.id
+    new_item = ShoppingList_Item(max_id + 1, name, quantity, unit)
     shopping_list.items.append(new_item)
     save_to_json(shopping_list.items, 'shopping_list.json')
     print(f"Sikeres hozzáadás: {new_item.name} {new_item.quantity} {new_item.unit}")
@@ -241,10 +249,14 @@ def modify_shopping_list_item(shopping_list):
                         clear_console()
                         return shopping_list
                     if new_quantity:
-                        while not new_quantity.isdigit():
-                            print("Kérlek számot adj meg!")
-                            new_quantity = input("Új mennyiség: ")
-                        item._setquantity(float(new_quantity))
+                        while True:
+                            try:
+                                float_quantity = float(new_quantity)
+                                break
+                            except ValueError:
+                                print("Kérlek számot adj meg!")
+                                new_quantity = input("Új mennyiség: ")
+                        item._setquantity(float_quantity)
                         print("Mennyiség módosítva.")
                         time.sleep(1)
                         clear_console()
@@ -321,9 +333,7 @@ def delete_shopping_list_item(shopping_list):
     clear_console()
     return shopping_list
 
-def shopping_list_main(recipes, menus, pantry, shopping_list):
-    from console import console_main
-
+def shopping_list_main(menus, pantry, shopping_list):
     clear_console()
     is_not_in_choices = False
     while True:
@@ -339,8 +349,8 @@ def shopping_list_main(recipes, menus, pantry, shopping_list):
             print("0. Vissza a főmenübe")
         s_choice = input("Válassz egy opciót: " if not is_not_in_choices else "Érvénytelen választás. Kérlek, válassz újra: ")
         if s_choice == '0':
-            console_main(recipes, menus, pantry, shopping_list)
-        elif s_choice in ['1', '2', '3', '4', '5', '6', '7']:
+            return pantry, shopping_list
+        elif s_choice not in ['1', '2', '3', '4', '5', '6', '7']:
             is_not_in_choices = True
             continue
-        shopping_list_menu(recipes, menus, pantry, shopping_list)
+        shopping_list = shopping_list_menu(s_choice, menus, pantry, shopping_list)

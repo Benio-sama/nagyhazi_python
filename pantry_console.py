@@ -26,10 +26,14 @@ def add_new_ingredient(pantry):
         clear_console()
         return pantry
     quantity_input = input("Add meg a mennyiséget: ")
-    while not quantity_input.isdigit():
-        print("Kérlek számot adj meg!")
-        quantity_input = input("Add meg a mennyiséget: ")
-    quantity = float(quantity_input)
+    while True:
+        try:
+            float_quantity = float(quantity_input)
+            break
+        except ValueError:
+            print("Kérlek számot adj meg!")
+            quantity_input = input("Add meg a mennyiséget: ")
+    quantity = float_quantity
     if quantity == 0:
         clear_console()
         return pantry
@@ -45,7 +49,6 @@ def add_new_ingredient(pantry):
     return pantry
 
 def modify_ingredient(pantry):
-    save_to_json(pantry, 'pantry.json')
     print("Hozzávaló módosítása")
     print("0. Mégse")
     for i in pantry:
@@ -75,6 +78,8 @@ def modify_ingredient(pantry):
                     print("3. Mértékegység módosítása")
                     print("0. Mégse")
                     mod_choice = input("Válassz egy opciót: ")
+                    while mod_choice not in ['0', '1', '2', '3']:
+                        mod_choice = input("Érvénytelen választás. Kérlek, válassz újra: ")
                     match mod_choice:
                         case '0':
                             return pantry
@@ -101,10 +106,14 @@ def modify_ingredient(pantry):
                                 clear_console()
                                 return pantry
                             if new_quantity:
-                                while not new_quantity.isdigit():
-                                    print("Kérlek számot adj meg!")
-                                    new_quantity = input("Új mennyiség: ")
-                                i._setquantity(float(new_quantity))
+                                while True:
+                                    try:
+                                        float_quantity = float(new_quantity)
+                                        break
+                                    except ValueError:
+                                        print("Kérlek számot adj meg!")
+                                        new_quantity = input("Új mennyiség: ")
+                                i._setquantity(float_quantity)
                                 print("Mennyiség módosítva.")
                                 time.sleep(1)
                                 clear_console()
@@ -150,15 +159,19 @@ def modify_ingredient(pantry):
             return pantry
         case '2':
             for i in pantry:
-                if i.id == ing_id-1:
+                if i.id == int(ing_id)-1:
                     a_quantity = input(f"Add meg a növelendő mennyiséget (jelenleg: {i.quantity}): ")
                     if a_quantity == '0':
                         clear_console()
                         return pantry
-                    while not a_quantity.isdigit():
-                        print("Kérlek számot adj meg!")
-                        a_quantity = input(f"Add meg a növelendő mennyiséget (jelenleg: {i.quantity}): ")
-                    i.add_quantity(float(a_quantity))
+                    while True:
+                        try:
+                            float_quantity = float(a_quantity)
+                            break
+                        except ValueError:
+                            print("Kérlek számot adj meg!")
+                            a_quantity = input(f"Add meg a növelendő mennyiséget (jelenleg: {i.quantity}): ")
+                    i.add_quantity(float_quantity)
                     print("Mennyiség növelve.")
                     time.sleep(1)
                     save_to_json(pantry, 'pantry.json')
@@ -170,15 +183,19 @@ def modify_ingredient(pantry):
             return pantry
         case '3':
             for i in pantry:
-                if i.id == ing_id-1:
+                if i.id == int(ing_id)-1:
                     r_quantity = input(f"Add meg a csökkentendő mennyiséget (jelenleg: {i.quantity}): ")
                     if r_quantity == '0':
                         clear_console()
                         return pantry
-                    while not r_quantity.isdigit():
-                        print("Kérlek számot adj meg!")
-                        r_quantity = input(f"Add meg a csökkentendő mennyiséget (jelenleg: {i.quantity}): ")
-                    i.remove_quantity(float(r_quantity))
+                    while True:
+                        try:
+                            float_quantity = float(r_quantity)
+                            break
+                        except ValueError:
+                            print("Kérlek számot adj meg!")
+                            r_quantity = input(f"Add meg a csökkentendő mennyiséget (jelenleg: {i.quantity}): ")
+                    i.remove_quantity(float_quantity)
                     print("Mennyiség csökkentve.")
                     time.sleep(1)
                     save_to_json(pantry, 'pantry.json')
@@ -227,9 +244,7 @@ def list_pantry(pantry):
     for item in pantry:
         print(item)
 
-def pantry_main_menu(recipes, menus, pantry, shopping_list):
-    from console import console_main
-
+def pantry_main_menu(pantry):
     clear_console()
     is_not_in_choices = False
     while True:
@@ -242,8 +257,7 @@ def pantry_main_menu(recipes, menus, pantry, shopping_list):
             print("0. Vissza a főmenübe")   
         p_choice = input("Válassz egy opciót: " if not is_not_in_choices else "Érvénytelen választás. Kérlek, válassz újra: ")
         if p_choice == '0':
-            console_main(recipes, menus, pantry, shopping_list)
-            break
+            return pantry
         elif p_choice not in ['1', '2', '3', '4']:
             is_not_in_choices = True
             continue

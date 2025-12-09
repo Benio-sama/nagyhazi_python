@@ -154,9 +154,7 @@ def list_todays_menu(menus):
                 for meal in m.recipes:
                     print(f"\t- {meal.name}")
 
-def menu_main(recipes, menus, pantry, shopping_list):
-    from console import console_main
-
+def menu_main(recipes, menus):
     clear_console()
     is_not_in_choices = False
     while True:
@@ -170,8 +168,7 @@ def menu_main(recipes, menus, pantry, shopping_list):
             print("0. Vissza a főmenübe")
         m_choice = input("Válassz egy opciót: " if not is_not_in_choices else "Érvénytelen választás. Kérlek, válassz újra: ")
         if m_choice == '0':
-            console_main(recipes, menus, pantry, shopping_list)
-            break
+            return menus
         elif m_choice not in ['1', '2', '3', '4', '5']:
             is_not_in_choices = True
             continue

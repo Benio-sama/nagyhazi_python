@@ -73,10 +73,15 @@ def add_recipe(recipes):
         return recipes
     while ing_name != 'kész':
         quantity_input = input("Mennyiség (ha ízlés szerint, hagyd üresen): ")
-        while not quantity_input.isdigit() and quantity_input != '':
-            print("Kérlek számot adj meg vagy hagyd üresen!")
-            quantity_input = input("Mennyiség (ha ízlés szerint, hagyd üresen): ")
-        quantity = float(quantity_input) if quantity_input else None
+        if quantity_input:
+            while True:
+                try:
+                    float_quantity = float(quantity_input)
+                    break
+                except ValueError:
+                    print("Kérlek számot adj meg!")
+                    quantity_input = input("Mennyiség (ha ízlés szerint, hagyd üresen): ")
+        quantity = float_quantity if quantity_input else None
         if quantity == 0:
             clear_console()
             return recipes
@@ -146,10 +151,14 @@ def modify_ingredient(recipe, recipes):
                         clear_console()
                         return recipes
                     if new_quantity:
-                        while not new_quantity.isdigit() or float(new_quantity) < 0:
-                            print("Kérlek pozitív számot adj meg!")
-                            new_quantity = input("Új mennyiség: ")
-                        ing._setquantity(float(new_quantity))
+                        while True:
+                            try:
+                                float_quantity = float(new_quantity)
+                                break
+                            except ValueError:
+                                print("Kérlek számot adj meg!")
+                                new_quantity = input("Új mennyiség: ")
+                        ing._setquantity(float_quantity)
                         print("Mennyiség módosítva.")
                         time.sleep(1)
                         clear_console()
@@ -173,10 +182,14 @@ def modify_ingredient(recipe, recipes):
                                 clear_console()
                                 return recipes
                             if new_quantity:
-                                while not new_quantity.isdigit() or float(new_quantity) < 0:
-                                    print("Kérlek pozitív számot adj meg!")
-                                    new_quantity = input("Új mennyiség: ")
-                                ing._setquantity(float(new_quantity))
+                                while True:
+                                    try:
+                                        float_quantity = float(new_quantity)
+                                        break
+                                    except ValueError:
+                                        print("Kérlek számot adj meg!")
+                                        new_quantity = input("Új mennyiség: ")
+                                ing._setquantity(float_quantity)
                                 print("Mennyiség módosítva.")
                                 time.sleep(1)
                                 clear_console()
@@ -212,6 +225,8 @@ def modify_recipe_menu(recipes):
             print(f"Módosítod a '{recipe.name}' receptet:")
             modify_menu()
             choice = input("Válassz egy opciót: ")
+            while choice not in ['0', '1', '2', '3', '4', '5']:
+                choice = input("Érvénytelen választás. Kérlek, válassz újra: ")
             match choice:
                 case '0':
                     clear_console()
@@ -280,10 +295,15 @@ def modify_recipe_menu(recipes):
                                 clear_console()
                                 return recipes
                             quantity_input = input("Mennyiség (ha ízlés szerint, hagyd üresen): ")
-                            while not quantity_input.isdigit() and quantity_input != '':
-                                print("Kérlek számot adj meg!")
-                                quantity_input = input("Mennyiség (ha ízlés szerint, hagyd üresen): ")
-                            quantity = float(quantity_input) if quantity_input != '' else quantity_input
+                            if quantity_input:
+                                while True:
+                                    try:
+                                        float_quantity = float(quantity_input)
+                                        break
+                                    except ValueError:
+                                        print("Kérlek számot adj meg!")
+                                        quantity_input = input("Mennyiség (ha ízlés szerint, hagyd üresen): ")
+                            quantity = float_quantity if quantity_input else None
                             if quantity == '0':
                                 clear_console()
                                 return recipes
@@ -294,6 +314,9 @@ def modify_recipe_menu(recipes):
                             ingredient = Ingredient(len(recipe.ingredients), ing_name, quantity, unit)
                             recipe.add_ingredient(ingredient)
                             print("Hozzávaló hozzáadva.")
+                            time.sleep(1)
+                            clear_console()
+                            save_to_json(recipes, "recipes.json")
                             return recipes
                         case '2':
                             clear_console()
@@ -329,6 +352,7 @@ def modify_recipe_menu(recipes):
                             return recipes
                         case '3':
                             recipes = modify_ingredient(recipe, recipes)
+                            return recipes
                 case '5':
                     clear_console()
                     modify_instructions_menu()
@@ -403,9 +427,8 @@ def modify_recipe_menu(recipes):
                             clear_console()
                             save_to_json(recipes, "recipes.json")
                             return recipes
-        else:
-            print("Recept nem található.")
-            return recipes
+    print("Recept nem található.")
+    return recipes
                             
 
 def delete_recipe(recipes):
@@ -450,9 +473,7 @@ def list_recipes(recipes):
     for recipe in recipes:
         print(recipe._allinfo())
 
-def recipe_main_menu(recipes, menus, pantry, shopping_list):
-    from console import console_main
-
+def recipe_main_menu(recipes):
     clear_console()
     is_not_in_choices = False
     while True:
@@ -465,9 +486,8 @@ def recipe_main_menu(recipes, menus, pantry, shopping_list):
             print("0. Vissza a főmenübe")
         r_choice = input("Válassz egy opciót: " if not is_not_in_choices else "Érvénytelen választás. Kérlek, válassz újra: ")
         if r_choice == '0':
-            console_main(recipes, menus, pantry, shopping_list)
-            break
+            return recipes
         elif r_choice not in ['1', '2', '3', '4']:
             is_not_in_choices = True
             continue
-        recipe_menu(r_choice, recipes, menus, pantry, shopping_list)
+        recipe_menu(r_choice, recipes)

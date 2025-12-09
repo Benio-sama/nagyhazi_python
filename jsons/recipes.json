@@ -22,6 +22,12 @@
                 "name": "tej",
                 "quantity": 300.0,
                 "unit": "ml"
+            },
+            {
+                "id": 3,
+                "name": "nutella",
+                "quantity": null,
+                "unit": "ízlés szerint"
             }
         ],
         "instructions": [
@@ -936,6 +942,63 @@
             "Jól elkeverjük, majd hozzáadjuk a fokhagymát és krumplit. Átkeverjük az egészet, és felöntjük annyi langyos vízzel, hogy pont ellepje a lábas tartalmát. Ízlés szerint sózzuk, borsozzuk. Ezt követően fedő alatt puhára főzzük.",
             "Miután kész, pár szem krumplit szétnyomkodunk villával, hogy sűrűbb legyen az étel állaga. Hozzászórjuk a felkarikázott kolbászt és virslit, majd hagyjuk még jó pár percig rotyogni.",
             "Friss kenyérrel és tetszőleges savanyúsággal tálaljuk."
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Mézeskalács",
+        "category": "desszert",
+        "servings": 6.0,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "liszt",
+                "quantity": 100.0,
+                "unit": "dkg"
+            },
+            {
+                "id": 1,
+                "name": "méz",
+                "quantity": 3.0,
+                "unit": "dl"
+            },
+            {
+                "id": 2,
+                "name": "porcukor",
+                "quantity": 30.0,
+                "unit": "dkg"
+            },
+            {
+                "id": 3,
+                "name": "mézeskalács fűszer",
+                "quantity": 4.0,
+                "unit": "tk"
+            },
+            {
+                "id": 4,
+                "name": "szódabikarbóna",
+                "quantity": 4.0,
+                "unit": "kk"
+            },
+            {
+                "id": 5,
+                "name": "tojás",
+                "quantity": 4.0,
+                "unit": "db"
+            },
+            {
+                "id": 6,
+                "name": "margarin",
+                "quantity": 30.0,
+                "unit": "dkg"
+            }
+        ],
+        "instructions": [
+            "Minden hozzávalót összekeverünk.",
+            "Pihentetjük hűvösben fél - 1 órát.",
+            "3 - 4 mm vastagra nyújtuk majd kiszaggatjuk formákkal.",
+            "Sütőpapírral bélelt tepsi tegyük őket kis távolságra egymástól, ne érjenek össze, egy minimálisan meg fognak nőni.",
+            "180 fokon előmelegített sütőben 8-10 percig süssük."
         ]
     }
 ]

@@ -8,16 +8,16 @@ from shopping_list_console import shopping_list_main
 def main_menu(c_choice, recipes, menus, pantry, shopping_list):
     if c_choice == '1':
         clear_console()
-        recipe_main_menu(recipes, menus, pantry, shopping_list)
+        recipes = recipe_main_menu(recipes)
     elif c_choice == '2':
         clear_console()
-        pantry_main_menu(recipes, menus, pantry, shopping_list)
+        pantry = pantry_main_menu(pantry)
     elif c_choice == '3':
         clear_console()
-        menu_main(recipes, menus, pantry, shopping_list)
+        menus = menu_main(recipes, menus)
     elif c_choice == '4':
         clear_console()
-        shopping_list_main(recipes, menus, pantry, shopping_list)
+        pantry, shopping_list = shopping_list_main(menus, pantry, shopping_list)
     elif c_choice == '5':
         export_main(recipes, menus, pantry, shopping_list)
 
@@ -26,6 +26,7 @@ def console_main(recipes, menus, pantry, shopping_list):
     is_not_in_choices = False
     while True:
         if not is_not_in_choices:
+            clear_console()
             print("Főmenü")
             print("1. Receptek kezelése")
             print("2. Kamra kezelése")

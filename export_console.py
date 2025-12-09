@@ -1,5 +1,6 @@
 import json
-from functions import back_to_menu
+import time
+from functions import clear_console
 
 def export_all(recipes, menus, pantry, shopping_list, filename):
     data = {
@@ -13,8 +14,7 @@ def export_all(recipes, menus, pantry, shopping_list, filename):
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 def export_main(recipes, menus, pantry, shopping_list):
-    from console import main_menu
-    
     export_all(recipes, menus, pantry, shopping_list, "export.json")
     print("Adatok exportálva export.json fájlba.")
-    back_to_menu(main_menu, recipes, menus, pantry, shopping_list)
+    time.sleep(1)
+    clear_console()
